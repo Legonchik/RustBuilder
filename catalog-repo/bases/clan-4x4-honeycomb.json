@@ -1,0 +1,1721 @@
+{
+  "name": "Клан 4x4 с сотами",
+  "description": "Большая база для клана: ядро 4x4 в 3 этажа + кольцо сот",
+  "author": "RustBuilder",
+  "tier": "metal",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "f4",
+      "type": "foundation",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": "f5",
+      "type": "foundation",
+      "x": 4,
+      "y": 0
+    },
+    {
+      "id": "f6",
+      "type": "foundation",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "id": "f7",
+      "type": "foundation",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "f8",
+      "type": "foundation",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "f9",
+      "type": "foundation",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": "f10",
+      "type": "foundation",
+      "x": 3,
+      "y": 1
+    },
+    {
+      "id": "f11",
+      "type": "foundation",
+      "x": 4,
+      "y": 1
+    },
+    {
+      "id": "f12",
+      "type": "foundation",
+      "x": 5,
+      "y": 1
+    },
+    {
+      "id": "f13",
+      "type": "foundation",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "f14",
+      "type": "foundation",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": "f15",
+      "type": "foundation",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "id": "f16",
+      "type": "foundation",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "id": "f17",
+      "type": "foundation",
+      "x": 4,
+      "y": 2
+    },
+    {
+      "id": "f18",
+      "type": "foundation",
+      "x": 5,
+      "y": 2
+    },
+    {
+      "id": "f19",
+      "type": "foundation",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "id": "f20",
+      "type": "foundation",
+      "x": 1,
+      "y": 3
+    },
+    {
+      "id": "f21",
+      "type": "foundation",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "id": "f22",
+      "type": "foundation",
+      "x": 3,
+      "y": 3
+    },
+    {
+      "id": "f23",
+      "type": "foundation",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "id": "f24",
+      "type": "foundation",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "id": "f25",
+      "type": "foundation",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "id": "f26",
+      "type": "foundation",
+      "x": 1,
+      "y": 4
+    },
+    {
+      "id": "f27",
+      "type": "foundation",
+      "x": 2,
+      "y": 4
+    },
+    {
+      "id": "f28",
+      "type": "foundation",
+      "x": 3,
+      "y": 4
+    },
+    {
+      "id": "f29",
+      "type": "foundation",
+      "x": 4,
+      "y": 4
+    },
+    {
+      "id": "f30",
+      "type": "foundation",
+      "x": 5,
+      "y": 4
+    },
+    {
+      "id": "f31",
+      "type": "foundation",
+      "x": 0,
+      "y": 5
+    },
+    {
+      "id": "f32",
+      "type": "foundation",
+      "x": 1,
+      "y": 5
+    },
+    {
+      "id": "f33",
+      "type": "foundation",
+      "x": 2,
+      "y": 5
+    },
+    {
+      "id": "f34",
+      "type": "foundation",
+      "x": 3,
+      "y": 5
+    },
+    {
+      "id": "f35",
+      "type": "foundation",
+      "x": 4,
+      "y": 5
+    },
+    {
+      "id": "f36",
+      "type": "foundation",
+      "x": 5,
+      "y": 5
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f29"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f8",
+      "edge": "N"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f8",
+      "edge": "W"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f9",
+      "edge": "N"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f10",
+      "edge": "N"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f11",
+      "edge": "N"
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f11",
+      "edge": "E"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f14",
+      "edge": "W",
+      "door": "armored",
+      "lock": "code"
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f17",
+      "edge": "E"
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f20",
+      "edge": "W"
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f23",
+      "edge": "E"
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f26",
+      "edge": "S"
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f26",
+      "edge": "W"
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f27",
+      "edge": "S"
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f28",
+      "edge": "S"
+    },
+    {
+      "id": "w14",
+      "type": "wall",
+      "on": "f29",
+      "edge": "E"
+    },
+    {
+      "id": "w15",
+      "type": "wall",
+      "on": "f29",
+      "edge": "S"
+    },
+    {
+      "id": "w16",
+      "type": "wall",
+      "on": "f9",
+      "edge": "E"
+    },
+    {
+      "id": "w17",
+      "type": "wall",
+      "on": "f15",
+      "edge": "E"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f21",
+      "edge": "E",
+      "door": "armored",
+      "lock": "code"
+    },
+    {
+      "id": "w18",
+      "type": "wall",
+      "on": "f27",
+      "edge": "E"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f26"
+    },
+    {
+      "id": "w19",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "w20",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W"
+    },
+    {
+      "id": "w21",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "w22",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N"
+    },
+    {
+      "id": "w23",
+      "type": "wall",
+      "on": "f4",
+      "edge": "N"
+    },
+    {
+      "id": "w24",
+      "type": "wall",
+      "on": "f5",
+      "edge": "N"
+    },
+    {
+      "id": "w25",
+      "type": "wall",
+      "on": "f6",
+      "edge": "N"
+    },
+    {
+      "id": "w26",
+      "type": "wall",
+      "on": "f6",
+      "edge": "E"
+    },
+    {
+      "id": "w27",
+      "type": "wall",
+      "on": "f7",
+      "edge": "W"
+    },
+    {
+      "id": "w28",
+      "type": "wall",
+      "on": "f12",
+      "edge": "E"
+    },
+    {
+      "id": "d3",
+      "type": "doorway",
+      "on": "f13",
+      "edge": "W",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w29",
+      "type": "wall",
+      "on": "f18",
+      "edge": "E"
+    },
+    {
+      "id": "w30",
+      "type": "wall",
+      "on": "f19",
+      "edge": "W"
+    },
+    {
+      "id": "w31",
+      "type": "wall",
+      "on": "f24",
+      "edge": "E"
+    },
+    {
+      "id": "w32",
+      "type": "wall",
+      "on": "f25",
+      "edge": "W"
+    },
+    {
+      "id": "w33",
+      "type": "wall",
+      "on": "f30",
+      "edge": "E"
+    },
+    {
+      "id": "w34",
+      "type": "wall",
+      "on": "f31",
+      "edge": "S"
+    },
+    {
+      "id": "w35",
+      "type": "wall",
+      "on": "f31",
+      "edge": "W"
+    },
+    {
+      "id": "w36",
+      "type": "wall",
+      "on": "f32",
+      "edge": "S"
+    },
+    {
+      "id": "w37",
+      "type": "wall",
+      "on": "f33",
+      "edge": "S"
+    },
+    {
+      "id": "w38",
+      "type": "wall",
+      "on": "f34",
+      "edge": "S"
+    },
+    {
+      "id": "w39",
+      "type": "wall",
+      "on": "f35",
+      "edge": "S"
+    },
+    {
+      "id": "w40",
+      "type": "wall",
+      "on": "f36",
+      "edge": "E"
+    },
+    {
+      "id": "w41",
+      "type": "wall",
+      "on": "f36",
+      "edge": "S"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f8",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f9",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f10",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f11",
+      "floor": 2
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f14",
+      "floor": 2
+    },
+    {
+      "id": "c6",
+      "type": "floor",
+      "on": "f15",
+      "floor": 2
+    },
+    {
+      "id": "c7",
+      "type": "floor",
+      "on": "f16",
+      "floor": 2
+    },
+    {
+      "id": "c8",
+      "type": "floor",
+      "on": "f17",
+      "floor": 2
+    },
+    {
+      "id": "c9",
+      "type": "floor",
+      "on": "f20",
+      "floor": 2
+    },
+    {
+      "id": "c10",
+      "type": "floor",
+      "on": "f21",
+      "floor": 2
+    },
+    {
+      "id": "c11",
+      "type": "floor",
+      "on": "f22",
+      "floor": 2
+    },
+    {
+      "id": "c12",
+      "type": "floor",
+      "on": "f23",
+      "floor": 2
+    },
+    {
+      "id": "c13",
+      "type": "floor",
+      "on": "f27",
+      "floor": 2
+    },
+    {
+      "id": "c14",
+      "type": "floor",
+      "on": "f28",
+      "floor": 2
+    },
+    {
+      "id": "c15",
+      "type": "floor",
+      "on": "f29",
+      "floor": 2
+    },
+    {
+      "id": "c16",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c17",
+      "type": "floor",
+      "on": "f2",
+      "floor": 2
+    },
+    {
+      "id": "c18",
+      "type": "floor",
+      "on": "f3",
+      "floor": 2
+    },
+    {
+      "id": "c19",
+      "type": "floor",
+      "on": "f4",
+      "floor": 2
+    },
+    {
+      "id": "c20",
+      "type": "floor",
+      "on": "f5",
+      "floor": 2
+    },
+    {
+      "id": "c21",
+      "type": "floor",
+      "on": "f6",
+      "floor": 2
+    },
+    {
+      "id": "c22",
+      "type": "floor",
+      "on": "f7",
+      "floor": 2
+    },
+    {
+      "id": "c23",
+      "type": "floor",
+      "on": "f12",
+      "floor": 2
+    },
+    {
+      "id": "c24",
+      "type": "floor",
+      "on": "f13",
+      "floor": 2
+    },
+    {
+      "id": "c25",
+      "type": "floor",
+      "on": "f18",
+      "floor": 2
+    },
+    {
+      "id": "c26",
+      "type": "floor",
+      "on": "f19",
+      "floor": 2
+    },
+    {
+      "id": "c27",
+      "type": "floor",
+      "on": "f24",
+      "floor": 2
+    },
+    {
+      "id": "c28",
+      "type": "floor",
+      "on": "f25",
+      "floor": 2
+    },
+    {
+      "id": "c29",
+      "type": "floor",
+      "on": "f30",
+      "floor": 2
+    },
+    {
+      "id": "c30",
+      "type": "floor",
+      "on": "f31",
+      "floor": 2
+    },
+    {
+      "id": "c31",
+      "type": "floor",
+      "on": "f32",
+      "floor": 2
+    },
+    {
+      "id": "c32",
+      "type": "floor",
+      "on": "f33",
+      "floor": 2
+    },
+    {
+      "id": "c33",
+      "type": "floor",
+      "on": "f34",
+      "floor": 2
+    },
+    {
+      "id": "c34",
+      "type": "floor",
+      "on": "f35",
+      "floor": 2
+    },
+    {
+      "id": "c35",
+      "type": "floor",
+      "on": "f36",
+      "floor": 2
+    },
+    {
+      "id": "w42",
+      "type": "wall",
+      "on": "f8",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w43",
+      "type": "wall",
+      "on": "f8",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w44",
+      "type": "wall",
+      "on": "f9",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w45",
+      "type": "wall",
+      "on": "f10",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w46",
+      "type": "wall",
+      "on": "f11",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w47",
+      "type": "wall",
+      "on": "f11",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w48",
+      "type": "wall",
+      "on": "f14",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w49",
+      "type": "wall",
+      "on": "f17",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w50",
+      "type": "wall",
+      "on": "f20",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w51",
+      "type": "wall",
+      "on": "f23",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w52",
+      "type": "wall",
+      "on": "f26",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w53",
+      "type": "wall",
+      "on": "f26",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w54",
+      "type": "wall",
+      "on": "f27",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w55",
+      "type": "wall",
+      "on": "f28",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w56",
+      "type": "wall",
+      "on": "f29",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w57",
+      "type": "wall",
+      "on": "f29",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w58",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w59",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w60",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w61",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w62",
+      "type": "wall",
+      "on": "f4",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w63",
+      "type": "wall",
+      "on": "f5",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w64",
+      "type": "wall",
+      "on": "f6",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w65",
+      "type": "wall",
+      "on": "f6",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w66",
+      "type": "wall",
+      "on": "f7",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w67",
+      "type": "wall",
+      "on": "f12",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w68",
+      "type": "wall",
+      "on": "f13",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w69",
+      "type": "wall",
+      "on": "f18",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w70",
+      "type": "wall",
+      "on": "f19",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w71",
+      "type": "wall",
+      "on": "f24",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w72",
+      "type": "wall",
+      "on": "f25",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w73",
+      "type": "wall",
+      "on": "f30",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w74",
+      "type": "wall",
+      "on": "f31",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w75",
+      "type": "wall",
+      "on": "f31",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w76",
+      "type": "wall",
+      "on": "f32",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w77",
+      "type": "wall",
+      "on": "f33",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w78",
+      "type": "wall",
+      "on": "f34",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w79",
+      "type": "wall",
+      "on": "f35",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w80",
+      "type": "wall",
+      "on": "f36",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w81",
+      "type": "wall",
+      "on": "f36",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "s2",
+      "type": "stairs",
+      "on": "f26",
+      "floor": 2
+    },
+    {
+      "id": "c36",
+      "type": "floor",
+      "on": "f8",
+      "floor": 3
+    },
+    {
+      "id": "c37",
+      "type": "floor",
+      "on": "f9",
+      "floor": 3
+    },
+    {
+      "id": "c38",
+      "type": "floor",
+      "on": "f10",
+      "floor": 3
+    },
+    {
+      "id": "c39",
+      "type": "floor",
+      "on": "f11",
+      "floor": 3
+    },
+    {
+      "id": "c40",
+      "type": "floor",
+      "on": "f14",
+      "floor": 3
+    },
+    {
+      "id": "c41",
+      "type": "floor",
+      "on": "f15",
+      "floor": 3
+    },
+    {
+      "id": "c42",
+      "type": "floor",
+      "on": "f16",
+      "floor": 3
+    },
+    {
+      "id": "c43",
+      "type": "floor",
+      "on": "f17",
+      "floor": 3
+    },
+    {
+      "id": "c44",
+      "type": "floor",
+      "on": "f20",
+      "floor": 3
+    },
+    {
+      "id": "c45",
+      "type": "floor",
+      "on": "f21",
+      "floor": 3
+    },
+    {
+      "id": "c46",
+      "type": "floor",
+      "on": "f22",
+      "floor": 3
+    },
+    {
+      "id": "c47",
+      "type": "floor",
+      "on": "f23",
+      "floor": 3
+    },
+    {
+      "id": "c48",
+      "type": "floor",
+      "on": "f27",
+      "floor": 3
+    },
+    {
+      "id": "c49",
+      "type": "floor",
+      "on": "f28",
+      "floor": 3
+    },
+    {
+      "id": "c50",
+      "type": "floor",
+      "on": "f29",
+      "floor": 3
+    },
+    {
+      "id": "c51",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c52",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c53",
+      "type": "floor",
+      "on": "f3",
+      "floor": 3
+    },
+    {
+      "id": "c54",
+      "type": "floor",
+      "on": "f4",
+      "floor": 3
+    },
+    {
+      "id": "c55",
+      "type": "floor",
+      "on": "f5",
+      "floor": 3
+    },
+    {
+      "id": "c56",
+      "type": "floor",
+      "on": "f6",
+      "floor": 3
+    },
+    {
+      "id": "c57",
+      "type": "floor",
+      "on": "f7",
+      "floor": 3
+    },
+    {
+      "id": "c58",
+      "type": "floor",
+      "on": "f12",
+      "floor": 3
+    },
+    {
+      "id": "c59",
+      "type": "floor",
+      "on": "f13",
+      "floor": 3
+    },
+    {
+      "id": "c60",
+      "type": "floor",
+      "on": "f18",
+      "floor": 3
+    },
+    {
+      "id": "c61",
+      "type": "floor",
+      "on": "f19",
+      "floor": 3
+    },
+    {
+      "id": "c62",
+      "type": "floor",
+      "on": "f24",
+      "floor": 3
+    },
+    {
+      "id": "c63",
+      "type": "floor",
+      "on": "f25",
+      "floor": 3
+    },
+    {
+      "id": "c64",
+      "type": "floor",
+      "on": "f30",
+      "floor": 3
+    },
+    {
+      "id": "c65",
+      "type": "floor",
+      "on": "f31",
+      "floor": 3
+    },
+    {
+      "id": "c66",
+      "type": "floor",
+      "on": "f32",
+      "floor": 3
+    },
+    {
+      "id": "c67",
+      "type": "floor",
+      "on": "f33",
+      "floor": 3
+    },
+    {
+      "id": "c68",
+      "type": "floor",
+      "on": "f34",
+      "floor": 3
+    },
+    {
+      "id": "c69",
+      "type": "floor",
+      "on": "f35",
+      "floor": 3
+    },
+    {
+      "id": "c70",
+      "type": "floor",
+      "on": "f36",
+      "floor": 3
+    },
+    {
+      "id": "w82",
+      "type": "wall",
+      "on": "f8",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "w83",
+      "type": "wall",
+      "on": "f8",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "o1",
+      "type": "window",
+      "on": "f9",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "w84",
+      "type": "wall",
+      "on": "f10",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "w85",
+      "type": "wall",
+      "on": "f11",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "w86",
+      "type": "wall",
+      "on": "f11",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "w87",
+      "type": "wall",
+      "on": "f14",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "w88",
+      "type": "wall",
+      "on": "f17",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "w89",
+      "type": "wall",
+      "on": "f20",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "o2",
+      "type": "window",
+      "on": "f23",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "w90",
+      "type": "wall",
+      "on": "f26",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "w91",
+      "type": "wall",
+      "on": "f26",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "w92",
+      "type": "wall",
+      "on": "f27",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "w93",
+      "type": "wall",
+      "on": "f28",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "w94",
+      "type": "wall",
+      "on": "f29",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "w95",
+      "type": "wall",
+      "on": "f29",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "c71",
+      "type": "floor",
+      "on": "f8",
+      "floor": 4
+    },
+    {
+      "id": "c72",
+      "type": "floor",
+      "on": "f9",
+      "floor": 4
+    },
+    {
+      "id": "c73",
+      "type": "floor",
+      "on": "f10",
+      "floor": 4
+    },
+    {
+      "id": "c74",
+      "type": "floor",
+      "on": "f11",
+      "floor": 4
+    },
+    {
+      "id": "c75",
+      "type": "floor",
+      "on": "f14",
+      "floor": 4
+    },
+    {
+      "id": "c76",
+      "type": "floor",
+      "on": "f15",
+      "floor": 4
+    },
+    {
+      "id": "c77",
+      "type": "floor",
+      "on": "f16",
+      "floor": 4
+    },
+    {
+      "id": "c78",
+      "type": "floor",
+      "on": "f17",
+      "floor": 4
+    },
+    {
+      "id": "c79",
+      "type": "floor",
+      "on": "f20",
+      "floor": 4
+    },
+    {
+      "id": "c80",
+      "type": "floor",
+      "on": "f21",
+      "floor": 4
+    },
+    {
+      "id": "c81",
+      "type": "floor",
+      "on": "f22",
+      "floor": 4
+    },
+    {
+      "id": "c82",
+      "type": "floor",
+      "on": "f23",
+      "floor": 4
+    },
+    {
+      "id": "c83",
+      "type": "floor",
+      "on": "f26",
+      "floor": 4
+    },
+    {
+      "id": "c84",
+      "type": "floor",
+      "on": "f27",
+      "floor": 4
+    },
+    {
+      "id": "c85",
+      "type": "floor",
+      "on": "f28",
+      "floor": 4
+    },
+    {
+      "id": "c86",
+      "type": "floor",
+      "on": "f29",
+      "floor": 4
+    }
+  ],
+  "steps": [
+    {
+      "text": "Ядро: 16 фундаментов квадратом 4x4.",
+      "pieces": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f14",
+        "f15",
+        "f16",
+        "f17",
+        "f20",
+        "f21",
+        "f22",
+        "f23",
+        "f26",
+        "f27",
+        "f28",
+        "f29"
+      ]
+    },
+    {
+      "text": "Шкаф в нижний правый угол ядра.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены ядра. Вход в ядро слева — бронированная дверь.",
+      "pieces": [
+        "w1",
+        "w2",
+        "w3",
+        "w4",
+        "w5",
+        "w6",
+        "d1",
+        "w7",
+        "w8",
+        "w9",
+        "w10",
+        "w11",
+        "w12",
+        "w13",
+        "w14",
+        "w15"
+      ]
+    },
+    {
+      "text": "Перегородка посередине ядра с проходом: две комнаты, лут в дальней.",
+      "pieces": [
+        "w16",
+        "w17",
+        "d2",
+        "w18"
+      ]
+    },
+    {
+      "text": "Лестница в нижнем левом углу ядра.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Соты: кольцо из 20 фундаментов вокруг ядра.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f12",
+        "f13",
+        "f18",
+        "f19",
+        "f24",
+        "f25",
+        "f30",
+        "f31",
+        "f32",
+        "f33",
+        "f34",
+        "f35",
+        "f36"
+      ]
+    },
+    {
+      "text": "Внешние стены сот. Вход снаружи — напротив двери ядра.",
+      "pieces": [
+        "w19",
+        "w20",
+        "w21",
+        "w22",
+        "w23",
+        "w24",
+        "w25",
+        "w26",
+        "w27",
+        "w28",
+        "d3",
+        "w29",
+        "w30",
+        "w31",
+        "w32",
+        "w33",
+        "w34",
+        "w35",
+        "w36",
+        "w37",
+        "w38",
+        "w39",
+        "w40",
+        "w41"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа.",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24",
+        "c25",
+        "c26",
+        "c27",
+        "c28",
+        "c29",
+        "c30",
+        "c31",
+        "c32",
+        "c33",
+        "c34",
+        "c35"
+      ]
+    },
+    {
+      "text": "Стены ядра второго этажа.",
+      "pieces": [
+        "w42",
+        "w43",
+        "w44",
+        "w45",
+        "w46",
+        "w47",
+        "w48",
+        "w49",
+        "w50",
+        "w51",
+        "w52",
+        "w53",
+        "w54",
+        "w55",
+        "w56",
+        "w57"
+      ]
+    },
+    {
+      "text": "Внешние стены сот второго этажа.",
+      "pieces": [
+        "w58",
+        "w59",
+        "w60",
+        "w61",
+        "w62",
+        "w63",
+        "w64",
+        "w65",
+        "w66",
+        "w67",
+        "w68",
+        "w69",
+        "w70",
+        "w71",
+        "w72",
+        "w73",
+        "w74",
+        "w75",
+        "w76",
+        "w77",
+        "w78",
+        "w79",
+        "w80",
+        "w81"
+      ]
+    },
+    {
+      "text": "Лестница на третий этаж.",
+      "pieces": [
+        "s2"
+      ]
+    },
+    {
+      "text": "Перекрытия третьего этажа (над сотами это их крыша).",
+      "pieces": [
+        "c36",
+        "c37",
+        "c38",
+        "c39",
+        "c40",
+        "c41",
+        "c42",
+        "c43",
+        "c44",
+        "c45",
+        "c46",
+        "c47",
+        "c48",
+        "c49",
+        "c50",
+        "c51",
+        "c52",
+        "c53",
+        "c54",
+        "c55",
+        "c56",
+        "c57",
+        "c58",
+        "c59",
+        "c60",
+        "c61",
+        "c62",
+        "c63",
+        "c64",
+        "c65",
+        "c66",
+        "c67",
+        "c68",
+        "c69",
+        "c70"
+      ]
+    },
+    {
+      "text": "Стены ядра третьего этажа с двумя окнами.",
+      "pieces": [
+        "w82",
+        "w83",
+        "o1",
+        "w84",
+        "w85",
+        "w86",
+        "w87",
+        "w88",
+        "w89",
+        "o2",
+        "w90",
+        "w91",
+        "w92",
+        "w93",
+        "w94",
+        "w95"
+      ]
+    },
+    {
+      "text": "Крыша ядра.",
+      "pieces": [
+        "c71",
+        "c72",
+        "c73",
+        "c74",
+        "c75",
+        "c76",
+        "c77",
+        "c78",
+        "c79",
+        "c80",
+        "c81",
+        "c82",
+        "c83",
+        "c84",
+        "c85",
+        "c86"
+      ]
+    },
+    {
+      "text": "Улучши всё до металла молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды. Если хватает МВК — внешние стены сот в МВК.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

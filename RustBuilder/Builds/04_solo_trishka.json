@@ -1,0 +1,175 @@
+{
+  "name": "Тришка (квадрат + 4 треугольника)",
+  "description": "Компактная соло-база: много углов, шкаф в центре",
+  "author": "RustBuilder",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "t1",
+      "type": "triangle",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "t2",
+      "type": "triangle",
+      "on": "f1",
+      "edge": "E"
+    },
+    {
+      "id": "t3",
+      "type": "triangle",
+      "on": "f1",
+      "edge": "S"
+    },
+    {
+      "id": "t4",
+      "type": "triangle",
+      "on": "f1",
+      "edge": "W"
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f1"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "t1",
+      "edge": "L"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "t1",
+      "edge": "R"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "t2",
+      "edge": "L"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "t2",
+      "edge": "R"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "t3",
+      "edge": "L"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "t3",
+      "edge": "R",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "t4",
+      "edge": "L"
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "t4",
+      "edge": "R"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "t1",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "t2",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "t3",
+      "floor": 2
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "t4",
+      "floor": 2
+    }
+  ],
+  "steps": [
+    {
+      "text": "Поставь квадратный фундамент в центре.",
+      "pieces": [
+        "f1"
+      ]
+    },
+    {
+      "text": "Приставь треугольные фундаменты ко всем четырём сторонам.",
+      "pieces": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "text": "Шкаф в центр.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены по всем внешним сторонам треугольников. Одна из них — дверной проём (вход).",
+      "pieces": [
+        "w1",
+        "w2",
+        "w3",
+        "w4",
+        "w5",
+        "d1",
+        "w6",
+        "w7"
+      ]
+    },
+    {
+      "text": "Крыша над всеми фундаментами.",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "bases": [
+    {
+      "file": "bases/2x2-shooting-roof.json",
+      "name": "2x2 + стрелковая крыша",
+      "description": "2x2 с площадкой на крыше: полустены, чтобы отстреливаться",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 4,
+      "floors": 3,
+      "steps": 11
+    },
+    {
+      "file": "bases/bunker-2x2-airlock.json",
+      "name": "2x2 + шлюз (airlock)",
+      "description": "2x2 с двумя треугольниками и шлюзом на входе",
+      "author": "",
+      "added": "",
+      "tier": "stone",
+      "foundations": 6,
+      "floors": 2,
+      "steps": 8
+    },
+    {
+      "file": "bases/2x2-honeycomb.json",
+      "name": "2x2 с сотами",
+      "description": "Ядро 2x2 + кольцо сот вокруг: рейдить дороже в 2–3 раза",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 16,
+      "floors": 3,
+      "steps": 11
+    },
+    {
+      "file": "bases/2x2-three-floors.json",
+      "name": "2x2 трёхэтажная",
+      "description": "Классика для соло/дуо: шлюз, лестница, три этажа",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 4,
+      "floors": 4,
+      "steps": 12
+    },
+    {
+      "file": "bases/3x1-airlock.json",
+      "name": "3x1 шлюз + 2 этаж",
+      "description": "Вытянутая база: шлюз на входе, лестница, лут наверху",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 3,
+      "floors": 3,
+      "steps": 9
+    },
+    {
+      "file": "bases/3x3-trio.json",
+      "name": "3x3 для трио",
+      "description": "Просторная база на 2–3 человек: шлюз, комната со шкафом в центре",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 9,
+      "floors": 3,
+      "steps": 10
+    },
+    {
+      "file": "bases/clan-4x4-honeycomb.json",
+      "name": "Клан 4x4 с сотами",
+      "description": "Большая база для клана: ядро 4x4 в 3 этажа + кольцо сот",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "metal",
+      "foundations": 36,
+      "floors": 4,
+      "steps": 15
+    },
+    {
+      "file": "bases/solo-1x1.json",
+      "name": "Соло 1x1",
+      "description": "Самый быстрый старт для одного: дешёвый, ставится за минуту",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 1,
+      "floors": 2,
+      "steps": 5
+    },
+    {
+      "file": "bases/starter-2x1.json",
+      "name": "Стартер 2x1",
+      "description": "Быстрый первый дом: 2 фундамента, 2 этажа",
+      "author": "",
+      "added": "",
+      "tier": "stone",
+      "foundations": 2,
+      "floors": 3,
+      "steps": 9
+    },
+    {
+      "file": "bases/solo-trishka.json",
+      "name": "Тришка (квадрат + 4 треугольника)",
+      "description": "Компактная соло-база: много углов, шкаф в центре",
+      "author": "RustBuilder",
+      "added": "",
+      "tier": "stone",
+      "foundations": 5,
+      "floors": 2,
+      "steps": 6
+    }
+  ]
+}

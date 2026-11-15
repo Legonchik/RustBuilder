@@ -1,0 +1,357 @@
+{
+  "name": "2x2 + стрелковая крыша",
+  "description": "2x2 с площадкой на крыше: полустены, чтобы отстреливаться",
+  "author": "RustBuilder",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "f4",
+      "type": "foundation",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f1"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f2",
+      "edge": "E"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f3",
+      "edge": "S"
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f3",
+      "edge": "W"
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f4",
+      "edge": "S",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f4",
+      "edge": "W"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f4",
+      "edge": "N",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f3"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f2",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f4",
+      "floor": 2
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f2",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f3",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w14",
+      "type": "wall",
+      "on": "f3",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w15",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w16",
+      "type": "wall",
+      "on": "f4",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "s2",
+      "type": "stairs",
+      "on": "f3",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c6",
+      "type": "floor",
+      "on": "f4",
+      "floor": 3
+    },
+    {
+      "id": "h1",
+      "type": "halfwall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "h2",
+      "type": "halfwall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "h3",
+      "type": "halfwall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 3
+    },
+    {
+      "id": "h4",
+      "type": "halfwall",
+      "on": "f2",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "h5",
+      "type": "halfwall",
+      "on": "f3",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "h6",
+      "type": "halfwall",
+      "on": "f3",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "h7",
+      "type": "halfwall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "h8",
+      "type": "halfwall",
+      "on": "f4",
+      "edge": "S",
+      "floor": 3
+    }
+  ],
+  "steps": [
+    {
+      "text": "Фундаменты 2x2.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "text": "Шкаф в верхний левый угол.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены первого этажа, вход — снизу справа.",
+      "pieces": [
+        "w1",
+        "w2",
+        "w3",
+        "w4",
+        "w5",
+        "w6",
+        "w7",
+        "d1"
+      ]
+    },
+    {
+      "text": "Шлюз в нижнем правом фундаменте.",
+      "pieces": [
+        "w8",
+        "d2"
+      ]
+    },
+    {
+      "text": "Лестница.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа.",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3"
+      ]
+    },
+    {
+      "text": "Стены второго этажа.",
+      "pieces": [
+        "w9",
+        "w10",
+        "w11",
+        "w12",
+        "w13",
+        "w14",
+        "w15",
+        "w16"
+      ]
+    },
+    {
+      "text": "Лестница на крышу.",
+      "pieces": [
+        "s2"
+      ]
+    },
+    {
+      "text": "Пол крыши.",
+      "pieces": [
+        "c4",
+        "c5",
+        "c6"
+      ]
+    },
+    {
+      "text": "Полустены по краю крыши — из-за них удобно стрелять.",
+      "pieces": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "h7",
+        "h8"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

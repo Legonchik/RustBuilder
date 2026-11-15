@@ -1,0 +1,255 @@
+{
+  "name": "3x1 шлюз + 2 этаж",
+  "description": "Вытянутая база: шлюз на входе, лестница, лут наверху",
+  "author": "RustBuilder",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f3"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f1",
+      "edge": "S"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f1",
+      "edge": "W",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f2",
+      "edge": "S"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N"
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f3",
+      "edge": "E"
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f3",
+      "edge": "S"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f1",
+      "edge": "E",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f2"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f3",
+      "floor": 2
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f1",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "o1",
+      "type": "window",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f2",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "o2",
+      "type": "window",
+      "on": "f3",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f3",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f3",
+      "floor": 3
+    }
+  ],
+  "steps": [
+    {
+      "text": "Три квадратных фундамента в ряд.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "text": "Шкаф в дальний фундамент.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены первого этажа. Вход — с короткой стороны первого фундамента.",
+      "pieces": [
+        "w1",
+        "w2",
+        "d1",
+        "w3",
+        "w4",
+        "w5",
+        "w6",
+        "w7"
+      ]
+    },
+    {
+      "text": "Шлюз: проём с дверью между первым и вторым фундаментом. Теперь чтобы войти, нужно пройти две двери.",
+      "pieces": [
+        "d2"
+      ]
+    },
+    {
+      "text": "Лестница в среднем фундаменте.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа (над лестницей не ставь).",
+      "pieces": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "text": "Стены второго этажа, два окна по краям.",
+      "pieces": [
+        "w8",
+        "w9",
+        "o1",
+        "w10",
+        "w11",
+        "w12",
+        "o2",
+        "w13"
+      ]
+    },
+    {
+      "text": "Крыша.",
+      "pieces": [
+        "c3",
+        "c4",
+        "c5"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

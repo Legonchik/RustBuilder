@@ -1,0 +1,483 @@
+{
+  "name": "3x3 для трио",
+  "description": "Просторная база на 2–3 человек: шлюз, комната со шкафом в центре",
+  "author": "RustBuilder",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "f4",
+      "type": "foundation",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "f5",
+      "type": "foundation",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "f6",
+      "type": "foundation",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": "f7",
+      "type": "foundation",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "f8",
+      "type": "foundation",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": "f9",
+      "type": "foundation",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f5"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N"
+    },
+    {
+      "id": "o1",
+      "type": "window",
+      "on": "f3",
+      "edge": "E"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f4",
+      "edge": "W"
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f6",
+      "edge": "E"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f7",
+      "edge": "S",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f7",
+      "edge": "W"
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f8",
+      "edge": "S"
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f9",
+      "edge": "E"
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f9",
+      "edge": "S"
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f7",
+      "edge": "E"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f7",
+      "edge": "N",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "d3",
+      "type": "doorway",
+      "on": "f5",
+      "edge": "W",
+      "door": "armored",
+      "lock": "code"
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f5",
+      "edge": "N"
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f5",
+      "edge": "E"
+    },
+    {
+      "id": "w14",
+      "type": "wall",
+      "on": "f5",
+      "edge": "S"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f3"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f2",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f4",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f5",
+      "floor": 2
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f6",
+      "floor": 2
+    },
+    {
+      "id": "c6",
+      "type": "floor",
+      "on": "f7",
+      "floor": 2
+    },
+    {
+      "id": "c7",
+      "type": "floor",
+      "on": "f8",
+      "floor": 2
+    },
+    {
+      "id": "c8",
+      "type": "floor",
+      "on": "f9",
+      "floor": 2
+    },
+    {
+      "id": "o2",
+      "type": "window",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w15",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w16",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w17",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w18",
+      "type": "wall",
+      "on": "f3",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "o3",
+      "type": "window",
+      "on": "f4",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w19",
+      "type": "wall",
+      "on": "f6",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w20",
+      "type": "wall",
+      "on": "f7",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w21",
+      "type": "wall",
+      "on": "f7",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w22",
+      "type": "wall",
+      "on": "f8",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w23",
+      "type": "wall",
+      "on": "f9",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "o4",
+      "type": "window",
+      "on": "f9",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "c9",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c10",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c11",
+      "type": "floor",
+      "on": "f3",
+      "floor": 3
+    },
+    {
+      "id": "c12",
+      "type": "floor",
+      "on": "f4",
+      "floor": 3
+    },
+    {
+      "id": "c13",
+      "type": "floor",
+      "on": "f5",
+      "floor": 3
+    },
+    {
+      "id": "c14",
+      "type": "floor",
+      "on": "f6",
+      "floor": 3
+    },
+    {
+      "id": "c15",
+      "type": "floor",
+      "on": "f7",
+      "floor": 3
+    },
+    {
+      "id": "c16",
+      "type": "floor",
+      "on": "f8",
+      "floor": 3
+    },
+    {
+      "id": "c17",
+      "type": "floor",
+      "on": "f9",
+      "floor": 3
+    }
+  ],
+  "steps": [
+    {
+      "text": "9 фундаментов квадратом 3x3.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "text": "Шкаф в центральный фундамент.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Внешние стены первого этажа. Вход — в нижнем левом углу.",
+      "pieces": [
+        "w1",
+        "w2",
+        "w3",
+        "w4",
+        "o1",
+        "w5",
+        "w6",
+        "d1",
+        "w7",
+        "w8",
+        "w9",
+        "w10"
+      ]
+    },
+    {
+      "text": "Шлюз в нижнем левом фундаменте: стена справа, проём с дверью сверху.",
+      "pieces": [
+        "w11",
+        "d2"
+      ]
+    },
+    {
+      "text": "Комната со шкафом: стены вокруг центра, вход слева через бронированную дверь.",
+      "pieces": [
+        "d3",
+        "w12",
+        "w13",
+        "w14"
+      ]
+    },
+    {
+      "text": "Лестница в верхнем правом углу.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа.",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ]
+    },
+    {
+      "text": "Стены второго этажа с окнами.",
+      "pieces": [
+        "o2",
+        "w15",
+        "w16",
+        "w17",
+        "w18",
+        "o3",
+        "w19",
+        "w20",
+        "w21",
+        "w22",
+        "w23",
+        "o4"
+      ]
+    },
+    {
+      "text": "Крыша.",
+      "pieces": [
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

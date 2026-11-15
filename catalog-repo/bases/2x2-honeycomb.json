@@ -1,0 +1,771 @@
+{
+  "name": "2x2 с сотами",
+  "description": "Ядро 2x2 + кольцо сот вокруг: рейдить дороже в 2–3 раза",
+  "author": "RustBuilder",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "f4",
+      "type": "foundation",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": "f5",
+      "type": "foundation",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "f6",
+      "type": "foundation",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "f7",
+      "type": "foundation",
+      "x": 2,
+      "y": 1
+    },
+    {
+      "id": "f8",
+      "type": "foundation",
+      "x": 3,
+      "y": 1
+    },
+    {
+      "id": "f9",
+      "type": "foundation",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": "f10",
+      "type": "foundation",
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": "f11",
+      "type": "foundation",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "id": "f12",
+      "type": "foundation",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "id": "f13",
+      "type": "foundation",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "id": "f14",
+      "type": "foundation",
+      "x": 1,
+      "y": 3
+    },
+    {
+      "id": "f15",
+      "type": "foundation",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "id": "f16",
+      "type": "foundation",
+      "x": 3,
+      "y": 3
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f11"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f6",
+      "edge": "N"
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f6",
+      "edge": "W",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f7",
+      "edge": "N"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f7",
+      "edge": "E"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f10",
+      "edge": "S"
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f10",
+      "edge": "W"
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f11",
+      "edge": "E"
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f11",
+      "edge": "S"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f10"
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N"
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W"
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N"
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f4",
+      "edge": "N"
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f5",
+      "edge": "W",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w14",
+      "type": "wall",
+      "on": "f8",
+      "edge": "E"
+    },
+    {
+      "id": "w15",
+      "type": "wall",
+      "on": "f9",
+      "edge": "W"
+    },
+    {
+      "id": "w16",
+      "type": "wall",
+      "on": "f12",
+      "edge": "E"
+    },
+    {
+      "id": "w17",
+      "type": "wall",
+      "on": "f13",
+      "edge": "S"
+    },
+    {
+      "id": "w18",
+      "type": "wall",
+      "on": "f13",
+      "edge": "W"
+    },
+    {
+      "id": "w19",
+      "type": "wall",
+      "on": "f14",
+      "edge": "S"
+    },
+    {
+      "id": "w20",
+      "type": "wall",
+      "on": "f15",
+      "edge": "S"
+    },
+    {
+      "id": "w21",
+      "type": "wall",
+      "on": "f16",
+      "edge": "E"
+    },
+    {
+      "id": "w22",
+      "type": "wall",
+      "on": "f16",
+      "edge": "S"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f6",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f7",
+      "floor": 2
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f11",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f2",
+      "floor": 2
+    },
+    {
+      "id": "c6",
+      "type": "floor",
+      "on": "f3",
+      "floor": 2
+    },
+    {
+      "id": "c7",
+      "type": "floor",
+      "on": "f4",
+      "floor": 2
+    },
+    {
+      "id": "c8",
+      "type": "floor",
+      "on": "f5",
+      "floor": 2
+    },
+    {
+      "id": "c9",
+      "type": "floor",
+      "on": "f8",
+      "floor": 2
+    },
+    {
+      "id": "c10",
+      "type": "floor",
+      "on": "f9",
+      "floor": 2
+    },
+    {
+      "id": "c11",
+      "type": "floor",
+      "on": "f12",
+      "floor": 2
+    },
+    {
+      "id": "c12",
+      "type": "floor",
+      "on": "f13",
+      "floor": 2
+    },
+    {
+      "id": "c13",
+      "type": "floor",
+      "on": "f14",
+      "floor": 2
+    },
+    {
+      "id": "c14",
+      "type": "floor",
+      "on": "f15",
+      "floor": 2
+    },
+    {
+      "id": "c15",
+      "type": "floor",
+      "on": "f16",
+      "floor": 2
+    },
+    {
+      "id": "w23",
+      "type": "wall",
+      "on": "f6",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w24",
+      "type": "wall",
+      "on": "f6",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w25",
+      "type": "wall",
+      "on": "f7",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w26",
+      "type": "wall",
+      "on": "f7",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w27",
+      "type": "wall",
+      "on": "f10",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w28",
+      "type": "wall",
+      "on": "f10",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w29",
+      "type": "wall",
+      "on": "f11",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w30",
+      "type": "wall",
+      "on": "f11",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w31",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w32",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w33",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w34",
+      "type": "wall",
+      "on": "f3",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w35",
+      "type": "wall",
+      "on": "f4",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w36",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w37",
+      "type": "wall",
+      "on": "f5",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w38",
+      "type": "wall",
+      "on": "f8",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w39",
+      "type": "wall",
+      "on": "f9",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w40",
+      "type": "wall",
+      "on": "f12",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w41",
+      "type": "wall",
+      "on": "f13",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w42",
+      "type": "wall",
+      "on": "f13",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w43",
+      "type": "wall",
+      "on": "f14",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w44",
+      "type": "wall",
+      "on": "f15",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w45",
+      "type": "wall",
+      "on": "f16",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w46",
+      "type": "wall",
+      "on": "f16",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "c16",
+      "type": "floor",
+      "on": "f6",
+      "floor": 3
+    },
+    {
+      "id": "c17",
+      "type": "floor",
+      "on": "f7",
+      "floor": 3
+    },
+    {
+      "id": "c18",
+      "type": "floor",
+      "on": "f10",
+      "floor": 3
+    },
+    {
+      "id": "c19",
+      "type": "floor",
+      "on": "f11",
+      "floor": 3
+    },
+    {
+      "id": "c20",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c21",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c22",
+      "type": "floor",
+      "on": "f3",
+      "floor": 3
+    },
+    {
+      "id": "c23",
+      "type": "floor",
+      "on": "f4",
+      "floor": 3
+    },
+    {
+      "id": "c24",
+      "type": "floor",
+      "on": "f5",
+      "floor": 3
+    },
+    {
+      "id": "c25",
+      "type": "floor",
+      "on": "f8",
+      "floor": 3
+    },
+    {
+      "id": "c26",
+      "type": "floor",
+      "on": "f9",
+      "floor": 3
+    },
+    {
+      "id": "c27",
+      "type": "floor",
+      "on": "f12",
+      "floor": 3
+    },
+    {
+      "id": "c28",
+      "type": "floor",
+      "on": "f13",
+      "floor": 3
+    },
+    {
+      "id": "c29",
+      "type": "floor",
+      "on": "f14",
+      "floor": 3
+    },
+    {
+      "id": "c30",
+      "type": "floor",
+      "on": "f15",
+      "floor": 3
+    },
+    {
+      "id": "c31",
+      "type": "floor",
+      "on": "f16",
+      "floor": 3
+    }
+  ],
+  "steps": [
+    {
+      "text": "Ядро: 4 фундамента квадратом 2x2.",
+      "pieces": [
+        "f6",
+        "f7",
+        "f10",
+        "f11"
+      ]
+    },
+    {
+      "text": "Шкаф в ядро, в дальний угол от входа.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены ядра первого этажа. Одна — проём с дверью (вход в ядро).",
+      "pieces": [
+        "w1",
+        "d1",
+        "w2",
+        "w3",
+        "w4",
+        "w5",
+        "w6",
+        "w7"
+      ]
+    },
+    {
+      "text": "Лестница в ядре.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Соты: кольцо из 12 фундаментов вокруг ядра.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f8",
+        "f9",
+        "f12",
+        "f13",
+        "f14",
+        "f15",
+        "f16"
+      ]
+    },
+    {
+      "text": "Внешние стены сот. Вход — снаружи напротив двери ядра (получается шлюз).",
+      "pieces": [
+        "w8",
+        "w9",
+        "w10",
+        "w11",
+        "w12",
+        "w13",
+        "d2",
+        "w14",
+        "w15",
+        "w16",
+        "w17",
+        "w18",
+        "w19",
+        "w20",
+        "w21",
+        "w22"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа над ядром и сотами (кроме лестницы).",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15"
+      ]
+    },
+    {
+      "text": "Стены ядра второго этажа.",
+      "pieces": [
+        "w23",
+        "w24",
+        "w25",
+        "w26",
+        "w27",
+        "w28",
+        "w29",
+        "w30"
+      ]
+    },
+    {
+      "text": "Внешние стены сот второго этажа.",
+      "pieces": [
+        "w31",
+        "w32",
+        "w33",
+        "w34",
+        "w35",
+        "w36",
+        "w37",
+        "w38",
+        "w39",
+        "w40",
+        "w41",
+        "w42",
+        "w43",
+        "w44",
+        "w45",
+        "w46"
+      ]
+    },
+    {
+      "text": "Крыша.",
+      "pieces": [
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24",
+        "c25",
+        "c26",
+        "c27",
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды. Внешние стены сот лучше сразу в металл.",
+      "pieces": [],
+      "floor": 1
+    }
+  ]
+}

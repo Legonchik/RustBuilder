@@ -1,0 +1,43 @@
+{
+  // Стартовый дом 2x1, два этажа
+  "name": "Стартер 2x1",
+  "description": "Быстрый первый дом: 2 фундамента, 2 этажа",
+  "tier": "stone",
+  "pieces": [
+    { "id": "f1", "type": "foundation", "x": 0, "y": 0 },
+    { "id": "f2", "type": "foundation", "x": 1, "y": 0 },
+
+    { "id": "tc", "type": "tc", "on": "f2", "floor": 1 },
+
+    { "id": "w1", "type": "wall", "on": "f1", "edge": "N" },
+    { "id": "w2", "type": "wall", "on": "f1", "edge": "W" },
+    { "id": "d1", "type": "doorway", "on": "f1", "edge": "S", "door": "sheet", "lock": "code", "entrance": true },
+    { "id": "w3", "type": "wall", "on": "f2", "edge": "N" },
+    { "id": "w4", "type": "wall", "on": "f2", "edge": "E" },
+    { "id": "w5", "type": "wall", "on": "f2", "edge": "S" },
+
+    { "id": "c1", "type": "floor", "on": "f1", "floor": 2 },
+    { "id": "c2", "type": "floor", "on": "f2", "floor": 2 },
+
+    { "id": "w6",  "type": "wall",   "on": "f1", "edge": "N", "floor": 2 },
+    { "id": "w7",  "type": "window", "on": "f1", "edge": "W", "floor": 2 },
+    { "id": "w8",  "type": "wall",   "on": "f1", "edge": "S", "floor": 2 },
+    { "id": "w9",  "type": "wall",   "on": "f2", "edge": "N", "floor": 2 },
+    { "id": "w10", "type": "wall",   "on": "f2", "edge": "E", "floor": 2 },
+    { "id": "w11", "type": "window", "on": "f2", "edge": "S", "floor": 2 },
+
+    { "id": "r1", "type": "floor", "on": "f1", "floor": 3 },
+    { "id": "r2", "type": "floor", "on": "f2", "floor": 3 }
+  ],
+  "steps": [
+    { "text": "Возьми план строительства и поставь первый квадратный фундамент. Тут будет вход.", "pieces": ["f1"] },
+    { "text": "Пристрой второй фундамент справа.", "pieces": ["f2"] },
+    { "text": "Сразу поставь шкаф (TC) в дальнем фундаменте, чтобы никто не застроил тебя.", "pieces": ["tc"] },
+    { "text": "Стены первого этажа по периметру. Южную сторону левого фундамента оставь пустой.", "pieces": ["w1", "w2", "w3", "w4", "w5"] },
+    { "text": "На юге левого фундамента поставь дверной проём, металлическую дверь и кодовый замок.", "pieces": ["d1"] },
+    { "text": "Перекрытие второго этажа.", "pieces": ["c1", "c2"] },
+    { "text": "Стены второго этажа и два окна.", "pieces": ["w6", "w7", "w8", "w9", "w10", "w11"] },
+    { "text": "Крыша.", "pieces": ["r1", "r2"] },
+    { "text": "Улучши всё до камня молотком (ПКМ по блоку). Закрой дверь и поставь код!", "pieces": [], "floor": 1 }
+  ]
+}

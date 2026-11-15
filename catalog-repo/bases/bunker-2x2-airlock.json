@@ -1,0 +1,46 @@
+{
+  "name": "2x2 + шлюз (airlock)",
+  "description": "2x2 с двумя треугольниками и шлюзом на входе",
+  "tier": "stone",
+  "pieces": [
+    { "id": "f1", "type": "foundation", "x": 0, "y": 0 },
+    { "id": "f2", "type": "foundation", "x": 1, "y": 0 },
+    { "id": "f3", "type": "foundation", "x": 0, "y": 1 },
+    { "id": "f4", "type": "foundation", "x": 1, "y": 1 },
+    { "id": "t1", "type": "triangle", "on": "f1", "edge": "N" },
+    { "id": "t2", "type": "triangle", "on": "f4", "edge": "S" },
+
+    { "id": "tc", "type": "tc", "on": "t1" },
+
+    { "id": "a1", "type": "wall", "on": "f1", "edge": "W" },
+    { "id": "a2", "type": "wall", "on": "t1", "edge": "L" },
+    { "id": "a3", "type": "wall", "on": "t1", "edge": "R" },
+    { "id": "a4", "type": "wall", "on": "f2", "edge": "N" },
+    { "id": "a5", "type": "wall", "on": "f2", "edge": "E" },
+    { "id": "a6", "type": "wall", "on": "f4", "edge": "E" },
+    { "id": "a7", "type": "wall", "on": "t2", "edge": "L" },
+    { "id": "a8", "type": "wall", "on": "t2", "edge": "R" },
+    { "id": "a9", "type": "wall", "on": "f3", "edge": "S" },
+
+    { "id": "i1", "type": "wall",    "on": "f3", "edge": "N" },
+    { "id": "d2", "type": "doorway", "on": "f3", "edge": "E", "door": "sheet", "lock": "code" },
+    { "id": "d1", "type": "doorway", "on": "f3", "edge": "W", "door": "sheet", "lock": "code", "entrance": true },
+
+    { "id": "r1", "type": "floor", "on": "f1", "floor": 2 },
+    { "id": "r2", "type": "floor", "on": "f2", "floor": 2 },
+    { "id": "r3", "type": "floor", "on": "f3", "floor": 2 },
+    { "id": "r4", "type": "floor", "on": "f4", "floor": 2 },
+    { "id": "r5", "type": "floor", "on": "t1", "floor": 2 },
+    { "id": "r6", "type": "floor", "on": "t2", "floor": 2 }
+  ],
+  "steps": [
+    { "text": "Поставь 4 квадратных фундамента квадратом 2x2.", "pieces": ["f1", "f2", "f3", "f4"] },
+    { "text": "Добавь треугольный фундамент сверху слева и снизу справа.", "pieces": ["t1", "t2"] },
+    { "text": "Поставь шкаф (TC) в верхний треугольник, это самое глубокое место.", "pieces": ["tc"] },
+    { "text": "Стены по всему периметру. Западную сторону нижнего левого фундамента пока не трогай, там будет вход.", "pieces": ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"] },
+    { "text": "Шлюз: стена над нижним левым фундаментом и дверной проём справа от него, с дверью и кодовым замком.", "pieces": ["i1", "d2"] },
+    { "text": "Входной дверной проём на западе, дверь и кодовый замок.", "pieces": ["d1"] },
+    { "text": "Крыша над всеми фундаментами, включая треугольники.", "pieces": ["r1", "r2", "r3", "r4", "r5", "r6"] },
+    { "text": "Улучши всё до камня. Внешние стены потом можно улучшить до металла.", "pieces": [], "floor": 1 }
+  ]
+}
