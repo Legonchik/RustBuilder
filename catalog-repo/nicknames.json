@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "nicks": [
+    {
+      "nick": "Claude",
+      "github": "Legonchik",
+      "added": "2026-11-15",
+      "source": "grant"
+    },
+    {
+      "nick": "RustBuilder",
+      "github": "Legonchik",
+      "added": "2026-11-15",
+      "source": "grant"
+    }
+  ]
+}
