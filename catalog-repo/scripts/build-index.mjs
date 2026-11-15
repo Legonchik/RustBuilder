@@ -11,10 +11,11 @@ const BASES = join(ROOT, "bases");
 const checkOnly = process.argv.includes("--check");
 const MAX_SIZE = 100 * 1024;
 
-const TYPES = new Set(["foundation", "triangle", "wall", "doorway", "window", "halfwall", "floor", "stairs", "tc"]);
-const EDGE_TYPES = new Set(["wall", "doorway", "window", "halfwall"]);
+const TYPES = new Set(["foundation", "triangle", "wall", "doorway", "window", "halfwall", "frame", "floor", "roof", "stairs", "tc",
+  "box", "furnace", "workbench", "repair", "bag", "locker"]);
+const EDGE_TYPES = new Set(["wall", "doorway", "window", "halfwall", "frame"]);
 const TIERS = new Set(["twig", "wood", "stone", "metal", "hqm"]);
-const DOORS = new Set(["wood", "sheet", "armored"]);
+const DOORS = new Set(["wood", "sheet", "armored", "garage", "double-wood", "double-sheet", "double-armored"]);
 const LOCKS = new Set(["code", "key"]);
 
 // Убирает однострочные и блочные комментарии вне строк (приложение их допускает)
@@ -57,10 +58,10 @@ function validate(plan) {
   if (!plan.pieces.some((p) => p.type === "foundation")) err("нужен хотя бы один квадратный фундамент");
 
   for (const p of plan.pieces) {
-    if (p.type === "foundation") continue;
+    if (p.type === "foundation" && p.on == null) continue;   // квадрат по сетке (x, y); с on/edge — прикреплён к стороне блока
     const host = byId.get(p.on);
     if (!host || !["foundation", "triangle"].includes(host.type)) { err(`'${p.id}' ссылается на несуществующий фундамент '${p.on}'`); continue; }
-    if (p.type === "triangle" || EDGE_TYPES.has(p.type)) {
+    if (p.type === "triangle" || p.type === "foundation" || EDGE_TYPES.has(p.type) || (p.type === "roof" && p.edge != null)) {
       const ok = host.type === "triangle" ? ["L", "R", "B"] : ["N", "E", "S", "W"];
       if (!ok.includes(String(p.edge).toUpperCase())) err(`'${p.id}': у '${host.id}' нет стороны '${p.edge}' (можно ${ok.join("/")})`);
     }
@@ -69,6 +70,15 @@ function validate(plan) {
   for (const [i, s] of (plan.steps ?? []).entries())
     for (const id of s.pieces ?? [])
       if (!byId.has(id)) err(`шаг ${i + 1} ссылается на несуществующий блок '${id}'`);
+
+  // интерьеры проверяем вместе с базой: их мебель стоит на фундаментах базы
+  if (plan.interiors != null && !Array.isArray(plan.interiors)) err("interiors должен быть списком");
+  if ((plan.interiors ?? []).length > 10) err("больше 10 вариантов интерьера");
+  for (const it of plan.interiors ?? []) {
+    if (typeof it.name !== "string" || !it.name.trim()) err("у интерьера нет name");
+    const merged = { ...plan, interiors: [], pieces: [...plan.pieces, ...(it.pieces ?? [])], steps: [...(plan.steps ?? []), ...(it.steps ?? [])] };
+    for (const e of validate(merged)) err(`интерьер «${it.name}»: ${e}`);
+  }
   return errors;
 }
 
