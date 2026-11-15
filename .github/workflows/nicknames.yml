@@ -1,0 +1,41 @@
+name: nicknames
+
+# Выдача, резерв и освобождение ников через форму «🔒 Выдать ник».
+# Срабатывает только от людей с правом записи в репозиторий, остальные заявки закрываются.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: catalog-commit
+  cancel-in-progress: false
+
+jobs:
+  grant:
+    if: contains(github.event.issue.labels.*.name, 'nick-grant')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: catalog-repo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Выдать ник
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: node scripts/nicks.mjs grant
+      - name: Сохранить nicknames.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nicknames.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Ники: заявка #${{ github.event.issue.number }}"
+          git pull --rebase
+          git push
