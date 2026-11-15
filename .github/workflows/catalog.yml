@@ -1,7 +1,7 @@
 name: Каталог баз
 
 # Каталог лежит в папке catalog-repo основного репозитория:
-# проверка присланных баз, сборка index.json и страницы для лайков (👍 на issue).
+# проверка присланных баз и ников, сборка index.json, страницы для лайков (👍 на issue), реестр ников.
 on:
   pull_request:
     paths: ["catalog-repo/bases/**"]
@@ -14,6 +14,10 @@ permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: catalog-commit
+  cancel-in-progress: false
+
 defaults:
   run:
     working-directory: catalog-repo
@@ -24,10 +28,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # нужна база PR, чтобы увидеть, какие файлы изменены
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - name: Проверка баз
         run: node scripts/build-index.mjs --check
+      - name: Проверка ника автора
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_ASSOC: ${{ github.event.pull_request.author_association }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          CATALOG_DIR: catalog-repo/
+        run: node scripts/nicks.mjs check
 
   index:
     if: github.event_name != 'pull_request'
@@ -44,10 +56,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATALOG_DIR: catalog-repo/
         run: node scripts/sync-likes.mjs
-      - name: Коммит index.json
+      - name: Закрепить новые ники
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CATALOG_DIR: catalog-repo/
+        run: node scripts/nicks.mjs register
+      - name: Коммит index.json и nicknames.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.json
-          git diff --cached --quiet || git commit -m "Обновить index.json каталога"
+          git add index.json nicknames.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Обновить каталог: index.json, ники"
+          git pull --rebase
           git push
