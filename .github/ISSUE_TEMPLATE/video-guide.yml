@@ -1,0 +1,53 @@
+name: 🎬 Видео-гайд к базе
+description: Предложи своё видео, как строить базу из каталога RustBuilder. Видео появится в программе только после проверки.
+title: "🎬 Видео-гайд"
+labels: ["video-guide"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Как это работает:** робот сразу проверит ссылку и правила, потом видео вручную посмотрит модератор.
+        В программе видео появится только после одобрения. Нарушение правил — бан на отправку видео.
+
+  - type: input
+    id: base
+    attributes:
+      label: База
+      description: Файл базы из каталога. Если открыл форму из программы — уже заполнено.
+      placeholder: bases/2x2-honeycomb.json
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка на видео
+      description: Только YouTube (youtube.com/watch, youtu.be, shorts) или Rutube. Другие сайты не принимаются.
+      placeholder: https://www.youtube.com/watch?v=...
+    validations:
+      required: true
+
+  - type: textarea
+    id: about
+    attributes:
+      label: Коротко о видео
+      description: Что показано — постройка с нуля, рейд-тест, интерьер. До 300 символов, без ссылок.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Правила
+      description: Без всех галочек заявка будет отклонена автоматически.
+      options:
+        - label: Видео именно про эту базу из каталога RustBuilder
+          required: true
+        - label: В видео и описании нет мата, оскорблений, 18+, политики, шок-контента
+          required: true
+        - label: Нет рекламы читов, казино, «бесплатных скинов», ставок, продажи аккаунтов и других скам-ссылок
+          required: true
+        - label: Видео моё или у меня есть разрешение автора
+          required: true
+        - label: Понимаю, что модератор может отклонить или удалить видео без объяснения причин
+          required: true
