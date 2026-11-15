@@ -1,0 +1,104 @@
+﻿<Window x:Class="RustBuilder.LibraryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RustBuilder — Базы" Width="860" Height="640" MinWidth="700" MinHeight="520"
+        Background="#FF17131F" Foreground="White" FontFamily="Segoe UI" Icon="pack://application:,,,/icon.ico"
+        Topmost="True" WindowStartupLocation="CenterScreen">
+    <Border Background="#FF17131F" Padding="16">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Левая колонка: список баз -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,10">
+            <TextBlock Text="Выбери базу" FontSize="20" FontWeight="SemiBold"/>
+            <TextBlock FontSize="12" Foreground="{DynamicResource AccentPaleBrush}" Margin="0,2,0,0" TextWrapping="Wrap"
+                       Text="Нажми на базу в списке → справа «Строить эту базу»"/>
+            <Grid Margin="0,8,0,0">
+                <TextBox x:Name="Search" Padding="6,4" Background="#22FFFFFF" Foreground="White"
+                         BorderBrush="#33FFFFFF" CaretBrush="White" TextChanged="Search_TextChanged"/>
+                <TextBlock x:Name="SearchHint" Text="Поиск…" Margin="9,5,0,0" Opacity="0.4" IsHitTestVisible="False"/>
+            </Grid>
+        </StackPanel>
+
+        <ListBox x:Name="List" Grid.Row="1" Grid.Column="0" Background="#11FFFFFF" BorderThickness="0"
+                 Foreground="White" SelectionChanged="List_SelectionChanged" MouseDoubleClick="List_MouseDoubleClick"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="4,6">
+                        <DockPanel>
+                            <Border DockPanel.Dock="Right" Background="{Binding BadgeBrush}" CornerRadius="8" Padding="7,1" Margin="6,0,0,0"
+                                    VerticalAlignment="Center" Visibility="{Binding BadgeVisible}">
+                                <TextBlock Text="{Binding Badge}" FontSize="11" FontWeight="SemiBold" Foreground="White"/>
+                            </Border>
+                            <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                        <TextBlock Text="{Binding Subtitle}" FontSize="11" Opacity="0.6" TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <WrapPanel Grid.Row="2" Grid.Column="0" Margin="0,10,0,0">
+            <Button Content="Каталог онлайн…" Style="{StaticResource PrimaryButton}" Click="Catalog_Click" Margin="0,0,6,6"/>
+            <Button Content="✏ Создать базу" Click="NewBase_Click" Margin="0,0,6,6" ToolTip="Редактор: построй схему мышкой и выложи в каталог"/>
+            <Button x:Name="ProfileBtn" Content="👤 Профиль" Click="Profile_Click" Margin="0,0,6,6" ToolTip="Ник автора — нужен, чтобы выкладывать базы"/>
+            <Button Content="Загрузить свою базу…" Click="Import_Click" Margin="0,0,6,6"/>
+            <Button Content="Открыть папку" Click="OpenFolder_Click" Margin="0,0,6,6"/>
+            <Button Content="❤ Поддержать" Click="Support_Click" Margin="0,0,6,6" Foreground="#FFFF8FA8"
+                    ToolTip="RustBuilder бесплатный. Если помог — можно закинуть донат автору (CloudTips)"/>
+        </WrapPanel>
+
+        <!-- Правая колонка: превью -->
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBlock x:Name="NameText" FontSize="20" FontWeight="SemiBold" Foreground="{DynamicResource AccentLightBrush}" TextTrimming="CharacterEllipsis"/>
+            <TextBlock x:Name="DescText" FontSize="12" Opacity="0.7" TextWrapping="Wrap" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <DockPanel Grid.Row="1" Grid.Column="2">
+            <StackPanel DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                <TextBlock x:Name="StatsText" FontSize="12" Opacity="0.8" TextWrapping="Wrap"/>
+                <TextBlock x:Name="CostText" FontSize="12" Foreground="{DynamicResource AccentPaleBrush}" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                <TextBlock x:Name="ErrorText" FontSize="12" Foreground="#FFFF6B6B" TextWrapping="Wrap" Margin="0,4,0,0"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" x:Name="InteriorBox" Margin="0,0,0,8">
+                <TextBlock FontSize="12" Margin="0,0,0,4">
+                    <Run Text="Интерьер" Foreground="#B0FFFFFF"/>
+                    <Run Text=" БЕТА " FontSize="10" FontWeight="Bold" Foreground="#FF17131F" Background="{DynamicResource AccentBrush}"/>
+                    <Run Text=" расстановка мебели ещё дорабатывается" Foreground="#80FFFFFF"/>
+                </TextBlock>
+                <WrapPanel x:Name="InteriorTabs"/>
+                <TextBlock x:Name="InteriorDesc" FontSize="12" Foreground="{DynamicResource AccentPaleBrush}" TextWrapping="Wrap" Margin="0,2,0,0"/>
+            </StackPanel>
+            <WrapPanel DockPanel.Dock="Top" Margin="0,0,0,6" x:Name="FloorTabs"/>
+            <Border Background="#33000000" CornerRadius="6" ClipToBounds="True">
+                <!-- Viewbox ужимает схему под окно: на маленьком окне она не налезает на текст снизу -->
+                <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+                    <Canvas x:Name="Preview" Width="440" Height="300" ClipToBounds="True"/>
+                </Viewbox>
+            </Border>
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Grid.Column="2" Margin="0,10,0,0" LastChildFill="False" VerticalAlignment="Top">
+            <Button x:Name="ChooseBtn" DockPanel.Dock="Right" Content="Строить эту базу" Style="{StaticResource PrimaryButton}"
+                    Padding="18,6" FontSize="14" Click="Choose_Click"/>
+            <Button x:Name="EditBtn" DockPanel.Dock="Left" Content="✏ Изменить" Click="Edit_Click" Margin="0,0,6,0"
+                    ToolTip="Открыть в редакторе. Встроенная база сохранится копией в «Мои базы»"/>
+            <Button x:Name="ExportBtn" DockPanel.Dock="Left" Content="Экспорт…" Click="Export_Click" Margin="0,0,6,0"
+                    ToolTip="Сохранить .json, чтобы отправить другу"/>
+            <Button x:Name="UploadBtn" DockPanel.Dock="Left" Content="Выложить" Click="Upload_Click" Margin="0,0,6,0"
+                    ToolTip="Откроет GitHub с готовым файлом — останется подтвердить"/>
+            <Button x:Name="DeleteBtn" DockPanel.Dock="Left" Content="Удалить" Click="Delete_Click"/>
+        </DockPanel>
+    </Grid>
+    </Border>
+</Window>

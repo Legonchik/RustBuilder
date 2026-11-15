@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "bases": [
+    {
+      "file": "bases/2x1-airlock-buffers.json",
+      "name": "2x1 аирлок + буфферки",
+      "description": "2x1 с треугольным аирлоком и буфферками: до шкафа две стены с любой стороны. Лут на втором этаже, отстрелочная крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 10,
+      "floors": 4,
+      "steps": 18
+    },
+    {
+      "file": "bases/2x1-tri-airlock-left.json",
+      "name": "2x1 треугольный аирлок (вход слева)",
+      "description": "Стандартный старт: 2x1, аирлок из треугольника, лут на втором этаже, отстрелочная крыша с будкой. Без окон — нет лишних дыр",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 3,
+      "floors": 4,
+      "steps": 15
+    },
+    {
+      "file": "bases/2x1-tri-airlock-right.json",
+      "name": "2x1 треугольный аирлок (вход справа)",
+      "description": "Стандартный старт: 2x1, аирлок из треугольника, лут на втором этаже, отстрелочная крыша с будкой. Без окон — нет лишних дыр",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 3,
+      "floors": 4,
+      "steps": 15
+    },
+    {
+      "file": "bases/bunker-2x2-airlock.json",
+      "name": "2x2 + аирлок + щупальца",
+      "description": "2x2 с аирлоком и щупальцами по бокам: шкаф в углу за щупальцем и треугольником-буфферкой, до него две стены с любой стороны. Отстрел на втором этаже, крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 9,
+      "floors": 4,
+      "steps": 20
+    },
+    {
+      "file": "bases/2x2-airlock-buffers.json",
+      "name": "2x2 аирлок + буфферки",
+      "description": "2x2 с треугольным аирлоком и буфферками по всему периметру: до шкафа две стены с любой стороны. Отстрел на третьем этаже, крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 16,
+      "floors": 5,
+      "steps": 23
+    },
+    {
+      "file": "bases/2x2-shooting-roof.json",
+      "name": "2x2 буфферки + стрелковая крыша",
+      "description": "2x2 с буфферками, треугольным аирлоком и площадкой на крыше: до шкафа две стены с любой стороны, выход на крышу через будку с дверью",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 16,
+      "floors": 4,
+      "steps": 19
+    },
+    {
+      "file": "bases/2x2-honeycomb.json",
+      "name": "2x2 с сотами",
+      "description": "Ядро 2x2 + кольцо сот вокруг: до шкафа две стены с любой стороны. Отстрел над ядром, крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 16,
+      "floors": 5,
+      "steps": 19
+    },
+    {
+      "file": "bases/2x2-three-floors.json",
+      "name": "2x2 трёхэтажная + щупальца",
+      "description": "Классика для соло/дуо: аирлок, три этажа, щупальца с бойницами, шкаф в углу за щупальцами — до него две стены с любой стороны. Отстрел на третьем этаже и крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 10,
+      "floors": 5,
+      "steps": 20
+    },
+    {
+      "file": "bases/3x1-airlock.json",
+      "name": "3x1 аирлок + 2 этаж",
+      "description": "Вытянутая база: аирлок на входе, шкаф в середине за двумя стенами (сбоку треугольники-буфферки), подъём в дальней клетке, лут на втором этаже, крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 5,
+      "floors": 4,
+      "steps": 15
+    },
+    {
+      "file": "bases/3x3-trio.json",
+      "name": "3x3 для трио",
+      "description": "Просторная база на 2–3 человек: аирлок, шкаф в центральной комнате за бронированной дверью, глухие стены, отстрелочная крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 9,
+      "floors": 4,
+      "steps": 13
+    },
+    {
+      "file": "bases/clan-4x4-honeycomb.json",
+      "name": "Клан 4x4 с сотами",
+      "description": "Большая база для клана: ядро 4x4 в 3 этажа + кольцо сот. Шкаф во внутренней комнате ядра — до него три слоя с любой стороны. Отстрел на 4 этаже, крыша с будкой",
+      "author": "Claude",
+      "added": "",
+      "tier": "metal",
+      "foundations": 36,
+      "floors": 6,
+      "steps": 25
+    },
+    {
+      "file": "bases/solo-1x1.json",
+      "name": "Соло 1x1",
+      "description": "Самый быстрый старт для одного: одна клетка, один этаж, без окон и подъёма. Дёшево и закрыто — переезжай в базу побольше, когда накопишь камня",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 1,
+      "floors": 2,
+      "steps": 5
+    },
+    {
+      "file": "bases/starter-2x1.json",
+      "name": "Стартер 2x1",
+      "description": "Первый дом за пару минут: 2 фундамента, один этаж, без окон и подъёма. Потом рядом строй базу посерьёзнее",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 2,
+      "floors": 2,
+      "steps": 5
+    },
+    {
+      "file": "bases/solo-trishka.json",
+      "name": "Тришка (квадрат + 4 треугольника)",
+      "description": "Соло-бункер в один этаж: шкаф в центре за двумя стенами, вход через треугольник-аирлок, двойная крыша над шкафом",
+      "author": "Claude",
+      "added": "",
+      "tier": "stone",
+      "foundations": 5,
+      "floors": 3,
+      "steps": 8
+    }
+  ]
+}

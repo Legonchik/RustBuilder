@@ -1,0 +1,1086 @@
+{
+  "name": "2x2 трёхэтажная + щупальца",
+  "description": "Классика для соло/дуо: аирлок, три этажа, щупальца с бойницами, шкаф в углу за щупальцами — до него две стены с любой стороны. Отстрел на третьем этаже и крыша с будкой",
+  "author": "Claude",
+  "tier": "stone",
+  "pieces": [
+    {
+      "id": "f1",
+      "type": "foundation",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "f2",
+      "type": "foundation",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": "f3",
+      "type": "foundation",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "id": "f4",
+      "type": "foundation",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "tc1",
+      "type": "tc",
+      "on": "f1"
+    },
+    {
+      "id": "f5",
+      "type": "foundation",
+      "x": 0,
+      "y": -1
+    },
+    {
+      "id": "f6",
+      "type": "foundation",
+      "x": 0,
+      "y": -2
+    },
+    {
+      "id": "f7",
+      "type": "foundation",
+      "x": -1,
+      "y": 0
+    },
+    {
+      "id": "f8",
+      "type": "foundation",
+      "x": -2,
+      "y": 0
+    },
+    {
+      "id": "f9",
+      "type": "foundation",
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": "f10",
+      "type": "foundation",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": "d1",
+      "type": "doorway",
+      "on": "f1",
+      "edge": "N",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "d2",
+      "type": "doorway",
+      "on": "f1",
+      "edge": "W",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "w1",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N"
+    },
+    {
+      "id": "d3",
+      "type": "doorway",
+      "on": "f2",
+      "edge": "E",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "d4",
+      "type": "doorway",
+      "on": "f3",
+      "edge": "S",
+      "door": "sheet",
+      "lock": "code",
+      "entrance": true
+    },
+    {
+      "id": "w2",
+      "type": "wall",
+      "on": "f3",
+      "edge": "W"
+    },
+    {
+      "id": "w3",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E"
+    },
+    {
+      "id": "w4",
+      "type": "wall",
+      "on": "f4",
+      "edge": "S"
+    },
+    {
+      "id": "o1",
+      "type": "window",
+      "on": "f5",
+      "edge": "E",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o2",
+      "type": "window",
+      "on": "f5",
+      "edge": "W",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o3",
+      "type": "window",
+      "on": "f6",
+      "edge": "N",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o4",
+      "type": "window",
+      "on": "f6",
+      "edge": "E",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o5",
+      "type": "window",
+      "on": "f6",
+      "edge": "W",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "c1",
+      "type": "floor",
+      "on": "f5",
+      "floor": 2
+    },
+    {
+      "id": "c2",
+      "type": "floor",
+      "on": "f6",
+      "floor": 2
+    },
+    {
+      "id": "o6",
+      "type": "window",
+      "on": "f7",
+      "edge": "N",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o7",
+      "type": "window",
+      "on": "f7",
+      "edge": "S",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o8",
+      "type": "window",
+      "on": "f8",
+      "edge": "N",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o9",
+      "type": "window",
+      "on": "f8",
+      "edge": "S",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o10",
+      "type": "window",
+      "on": "f8",
+      "edge": "W",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "c3",
+      "type": "floor",
+      "on": "f7",
+      "floor": 2
+    },
+    {
+      "id": "c4",
+      "type": "floor",
+      "on": "f8",
+      "floor": 2
+    },
+    {
+      "id": "o11",
+      "type": "window",
+      "on": "f9",
+      "edge": "N",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o12",
+      "type": "window",
+      "on": "f9",
+      "edge": "S",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o13",
+      "type": "window",
+      "on": "f10",
+      "edge": "N",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o14",
+      "type": "window",
+      "on": "f10",
+      "edge": "E",
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o15",
+      "type": "window",
+      "on": "f10",
+      "edge": "S",
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "c5",
+      "type": "floor",
+      "on": "f9",
+      "floor": 2
+    },
+    {
+      "id": "c6",
+      "type": "floor",
+      "on": "f10",
+      "floor": 2
+    },
+    {
+      "id": "w5",
+      "type": "wall",
+      "on": "f3",
+      "edge": "E"
+    },
+    {
+      "id": "d5",
+      "type": "doorway",
+      "on": "f3",
+      "edge": "N",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "d6",
+      "type": "doorway",
+      "on": "f1",
+      "edge": "E",
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "s1",
+      "type": "stairs",
+      "on": "f4"
+    },
+    {
+      "id": "c7",
+      "type": "floor",
+      "on": "f1",
+      "floor": 2
+    },
+    {
+      "id": "c8",
+      "type": "floor",
+      "on": "f2",
+      "floor": 2
+    },
+    {
+      "id": "c9",
+      "type": "floor",
+      "on": "f3",
+      "floor": 2
+    },
+    {
+      "id": "w6",
+      "type": "wall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w7",
+      "type": "wall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w8",
+      "type": "wall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 2
+    },
+    {
+      "id": "w9",
+      "type": "wall",
+      "on": "f2",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w10",
+      "type": "wall",
+      "on": "f3",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "w11",
+      "type": "wall",
+      "on": "f3",
+      "edge": "W",
+      "floor": 2
+    },
+    {
+      "id": "w12",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 2
+    },
+    {
+      "id": "w13",
+      "type": "wall",
+      "on": "f4",
+      "edge": "S",
+      "floor": 2
+    },
+    {
+      "id": "s2",
+      "type": "stairs",
+      "on": "f4",
+      "floor": 2
+    },
+    {
+      "id": "c10",
+      "type": "floor",
+      "on": "f1",
+      "floor": 3
+    },
+    {
+      "id": "c11",
+      "type": "floor",
+      "on": "f2",
+      "floor": 3
+    },
+    {
+      "id": "c12",
+      "type": "floor",
+      "on": "f3",
+      "floor": 3
+    },
+    {
+      "id": "o16",
+      "type": "window",
+      "on": "f1",
+      "edge": "N",
+      "floor": 3,
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o17",
+      "type": "window",
+      "on": "f1",
+      "edge": "W",
+      "floor": 3,
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o18",
+      "type": "window",
+      "on": "f2",
+      "edge": "N",
+      "floor": 3,
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o19",
+      "type": "window",
+      "on": "f2",
+      "edge": "E",
+      "floor": 3,
+      "embrasure": "vertical"
+    },
+    {
+      "id": "o20",
+      "type": "window",
+      "on": "f3",
+      "edge": "S",
+      "floor": 3,
+      "embrasure": "horizontal"
+    },
+    {
+      "id": "o21",
+      "type": "window",
+      "on": "f3",
+      "edge": "W",
+      "floor": 3,
+      "embrasure": "vertical"
+    },
+    {
+      "id": "d7",
+      "type": "doorway",
+      "on": "f4",
+      "edge": "N",
+      "floor": 3,
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "w14",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 3
+    },
+    {
+      "id": "w15",
+      "type": "wall",
+      "on": "f4",
+      "edge": "S",
+      "floor": 3
+    },
+    {
+      "id": "w16",
+      "type": "wall",
+      "on": "f4",
+      "edge": "W",
+      "floor": 3
+    },
+    {
+      "id": "s3",
+      "type": "stairs",
+      "on": "f4",
+      "floor": 3
+    },
+    {
+      "id": "c13",
+      "type": "floor",
+      "on": "f1",
+      "floor": 4
+    },
+    {
+      "id": "c14",
+      "type": "floor",
+      "on": "f2",
+      "floor": 4
+    },
+    {
+      "id": "c15",
+      "type": "floor",
+      "on": "f3",
+      "floor": 4
+    },
+    {
+      "id": "d8",
+      "type": "doorway",
+      "on": "f4",
+      "edge": "N",
+      "floor": 4,
+      "door": "sheet",
+      "lock": "code"
+    },
+    {
+      "id": "w17",
+      "type": "wall",
+      "on": "f4",
+      "edge": "E",
+      "floor": 4
+    },
+    {
+      "id": "w18",
+      "type": "wall",
+      "on": "f4",
+      "edge": "S",
+      "floor": 4
+    },
+    {
+      "id": "w19",
+      "type": "wall",
+      "on": "f4",
+      "edge": "W",
+      "floor": 4
+    },
+    {
+      "id": "c16",
+      "type": "floor",
+      "on": "f4",
+      "floor": 5
+    },
+    {
+      "id": "h1",
+      "type": "halfwall",
+      "on": "f1",
+      "edge": "N",
+      "floor": 4
+    },
+    {
+      "id": "h2",
+      "type": "halfwall",
+      "on": "f1",
+      "edge": "W",
+      "floor": 4
+    },
+    {
+      "id": "h3",
+      "type": "halfwall",
+      "on": "f2",
+      "edge": "N",
+      "floor": 4
+    },
+    {
+      "id": "h4",
+      "type": "halfwall",
+      "on": "f2",
+      "edge": "E",
+      "floor": 4
+    },
+    {
+      "id": "h5",
+      "type": "halfwall",
+      "on": "f3",
+      "edge": "S",
+      "floor": 4
+    },
+    {
+      "id": "h6",
+      "type": "halfwall",
+      "on": "f3",
+      "edge": "W",
+      "floor": 4
+    }
+  ],
+  "steps": [
+    {
+      "text": "Четыре фундамента квадратом 2x2.",
+      "pieces": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "text": "Шкаф в верхний левый фундамент — его с двух сторон прикроют щупальца.",
+      "pieces": [
+        "tc1"
+      ]
+    },
+    {
+      "text": "Стены первого этажа, вход — внизу слева. Где будут щупальца — проёмы с дверью.",
+      "pieces": [
+        "d1",
+        "d2",
+        "w1",
+        "d3",
+        "d4",
+        "w2",
+        "w3",
+        "w4"
+      ]
+    },
+    {
+      "text": "Аирлок в нижнем левом фундаменте: стена справа и проём с дверью наверх, к шкафу.",
+      "pieces": [
+        "w5",
+        "d5"
+      ]
+    },
+    {
+      "text": "Дверь из комнаты шкафа в правую половину базы.",
+      "pieces": [
+        "d6"
+      ]
+    },
+    {
+      "text": "Щупальца: фундаменты-коридоры из базы наружу, по два квадрата в линию.",
+      "pieces": [
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10"
+      ]
+    },
+    {
+      "text": "Стены щупалец — окна с бойницами по бокам и в торце, вход из базы — проём с дверью. Отсюда простреливаешь подходы со всех сторон, не выходя из дома.",
+      "pieces": [
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5",
+        "o6",
+        "o7",
+        "o8",
+        "o9",
+        "o10",
+        "o11",
+        "o12",
+        "o13",
+        "o14",
+        "o15"
+      ]
+    },
+    {
+      "text": "Потолки над щупальцами.",
+      "pieces": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+      ]
+    },
+    {
+      "text": "Подъём в нижнем правом фундаменте — тупиковый угол, не на пути к шкафу.",
+      "pieces": [
+        "s1"
+      ]
+    },
+    {
+      "text": "Перекрытия второго этажа (кроме клетки с подъёмом).",
+      "pieces": [
+        "c7",
+        "c8",
+        "c9"
+      ]
+    },
+    {
+      "text": "Стены второго этажа — глухие.",
+      "pieces": [
+        "w6",
+        "w7",
+        "w8",
+        "w9",
+        "w10",
+        "w11",
+        "w12",
+        "w13"
+      ]
+    },
+    {
+      "text": "Второй подъём — ровно над первым.",
+      "pieces": [
+        "s2"
+      ]
+    },
+    {
+      "text": "Перекрытия третьего этажа (кроме клетки с подъёмом).",
+      "pieces": [
+        "c10",
+        "c11",
+        "c12"
+      ]
+    },
+    {
+      "text": "Третий этаж. Будка подъёма: стены вокруг клетки с подъёмом и проём с дверью и кодом. Если сломают бойницу — дальше этой двери к луту не пройти.",
+      "pieces": [
+        "d7",
+        "w14",
+        "w15",
+        "w16"
+      ]
+    },
+    {
+      "text": "Третий этаж. Отстрел: оконные проёмы по периметру, в каждом бойница — через одну горизонтальная (широкий обзор) и вертикальная (целиться вниз, под стены). Пустых окон не оставляй — это дыра в дом.",
+      "pieces": [
+        "o16",
+        "o17",
+        "o18",
+        "o19",
+        "o20",
+        "o21"
+      ]
+    },
+    {
+      "text": "Подъём на крышу — ровно над предыдущим.",
+      "pieces": [
+        "s3"
+      ]
+    },
+    {
+      "text": "Пол крыши над всеми клетками, кроме клетки с подъёмом.",
+      "pieces": [
+        "c13",
+        "c14",
+        "c15"
+      ]
+    },
+    {
+      "text": "Будка выхода на крышу: стены вокруг подъёма, проём с дверью и кодом в сторону крыши, сверху потолок. Без неё крыша — открытый вход в дом.",
+      "pieces": [
+        "d8",
+        "w17",
+        "w18",
+        "w19",
+        "c16"
+      ]
+    },
+    {
+      "text": "Полустены по краю крыши. Присел — ты в укрытии, встал — стреляешь сверху.",
+      "pieces": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ]
+    },
+    {
+      "text": "Улучши всё до камня молотком (ПКМ по блоку → улучшить). Закрой двери и поставь коды.",
+      "pieces": [],
+      "floor": 1
+    }
+  ],
+  "interiors": [
+    {
+      "name": "Лутовая",
+      "description": "Спальники на 2 чел., остальное — ящики под лут.",
+      "pieces": [
+        {
+          "id": "i1_bag1",
+          "type": "bag",
+          "on": "f1",
+          "slot": 0
+        },
+        {
+          "id": "i1_bag2",
+          "type": "bag",
+          "on": "f1",
+          "slot": 1
+        },
+        {
+          "id": "i1_box3",
+          "type": "box",
+          "on": "f2",
+          "slot": 0
+        },
+        {
+          "id": "i1_box4",
+          "type": "box",
+          "on": "f2",
+          "slot": 1
+        },
+        {
+          "id": "i1_box5",
+          "type": "box",
+          "on": "f1",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i1_box6",
+          "type": "box",
+          "on": "f1",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i1_box7",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i1_box8",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i1_box9",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i1_box10",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 1
+        }
+      ],
+      "steps": [
+        {
+          "text": "Большие ящики по углам клеток — сюда весь лут. Этаж 1.",
+          "pieces": [
+            "i1_box3",
+            "i1_box4"
+          ]
+        },
+        {
+          "text": "Большие ящики по углам клеток — сюда весь лут. Этаж 2.",
+          "pieces": [
+            "i1_box5",
+            "i1_box6",
+            "i1_box7",
+            "i1_box8",
+            "i1_box9",
+            "i1_box10"
+          ]
+        },
+        {
+          "text": "Спальники — по одному на каждого игрока, чтобы возрождаться дома. Этаж 1.",
+          "pieces": [
+            "i1_bag1",
+            "i1_bag2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Крафт и плавка",
+      "description": "Спальники, верстак, ремонтный верстак и печки, остальное — ящики.",
+      "pieces": [
+        {
+          "id": "i2_bag1",
+          "type": "bag",
+          "on": "f1",
+          "slot": 0
+        },
+        {
+          "id": "i2_bag2",
+          "type": "bag",
+          "on": "f1",
+          "slot": 1
+        },
+        {
+          "id": "i2_workbench3",
+          "type": "workbench",
+          "on": "f2",
+          "slot": 0
+        },
+        {
+          "id": "i2_furnace4",
+          "type": "furnace",
+          "on": "f2",
+          "slot": 1
+        },
+        {
+          "id": "i2_repair5",
+          "type": "repair",
+          "on": "f1",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i2_furnace6",
+          "type": "furnace",
+          "on": "f1",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i2_box7",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i2_box8",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i2_box9",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i2_box10",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 1
+        }
+      ],
+      "steps": [
+        {
+          "text": "Большие ящики по углам клеток — сюда весь лут. Этаж 2.",
+          "pieces": [
+            "i2_box7",
+            "i2_box8",
+            "i2_box9",
+            "i2_box10"
+          ]
+        },
+        {
+          "text": "Печки. Оставь к ним проход — их часто открываешь. Этаж 1.",
+          "pieces": [
+            "i2_furnace4"
+          ]
+        },
+        {
+          "text": "Печки. Оставь к ним проход — их часто открываешь. Этаж 2.",
+          "pieces": [
+            "i2_furnace6"
+          ]
+        },
+        {
+          "text": "Верстак — крафтишь прямо рядом с лутом. Этаж 1.",
+          "pieces": [
+            "i2_workbench3"
+          ]
+        },
+        {
+          "text": "Ремонтный верстак — чинить броню и оружие. Этаж 2.",
+          "pieces": [
+            "i2_repair5"
+          ]
+        },
+        {
+          "text": "Спальники — по одному на каждого игрока, чтобы возрождаться дома. Этаж 1.",
+          "pieces": [
+            "i2_bag1",
+            "i2_bag2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Для команды",
+      "description": "Спальники и шкафчики на 2 чел., верстак, печка и ящики.",
+      "pieces": [
+        {
+          "id": "i3_bag1",
+          "type": "bag",
+          "on": "f1",
+          "slot": 0
+        },
+        {
+          "id": "i3_bag2",
+          "type": "bag",
+          "on": "f1",
+          "slot": 1
+        },
+        {
+          "id": "i3_locker3",
+          "type": "locker",
+          "on": "f2",
+          "slot": 0
+        },
+        {
+          "id": "i3_locker4",
+          "type": "locker",
+          "on": "f2",
+          "slot": 1
+        },
+        {
+          "id": "i3_workbench5",
+          "type": "workbench",
+          "on": "f1",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i3_furnace6",
+          "type": "furnace",
+          "on": "f1",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i3_box7",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i3_box8",
+          "type": "box",
+          "on": "f2",
+          "floor": 2,
+          "slot": 1
+        },
+        {
+          "id": "i3_box9",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 0
+        },
+        {
+          "id": "i3_box10",
+          "type": "box",
+          "on": "f3",
+          "floor": 2,
+          "slot": 1
+        }
+      ],
+      "steps": [
+        {
+          "text": "Большие ящики по углам клеток — сюда весь лут. Этаж 2.",
+          "pieces": [
+            "i3_box7",
+            "i3_box8",
+            "i3_box9",
+            "i3_box10"
+          ]
+        },
+        {
+          "text": "Печки. Оставь к ним проход — их часто открываешь. Этаж 2.",
+          "pieces": [
+            "i3_furnace6"
+          ]
+        },
+        {
+          "text": "Верстак — крафтишь прямо рядом с лутом. Этаж 2.",
+          "pieces": [
+            "i3_workbench5"
+          ]
+        },
+        {
+          "text": "Спальники — по одному на каждого игрока, чтобы возрождаться дома. Этаж 1.",
+          "pieces": [
+            "i3_bag1",
+            "i3_bag2"
+          ]
+        },
+        {
+          "text": "Шкафчики для одежды — переодеться за секунду после смерти. Этаж 1.",
+          "pieces": [
+            "i3_locker3",
+            "i3_locker4"
+          ]
+        }
+      ]
+    }
+  ]
+}
