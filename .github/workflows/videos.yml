@@ -1,0 +1,47 @@
+name: video-guides
+
+# Видео-гайды к базам: автопроверка заявок и добавление в catalog-repo/videos.json
+# только после метки video-approved от модератора (write/admin доступ к репозиторию).
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: video-guides
+  cancel-in-progress: false
+
+jobs:
+  video:
+    if: >-
+      (github.event.action != 'labeled' && contains(github.event.issue.labels.*.name, 'video-guide')) ||
+      (github.event.action == 'labeled' && (github.event.label.name == 'video-approved' || github.event.label.name == 'video-removed'))
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: catalog-repo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Проверка / одобрение
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ACTOR: ${{ github.actor }}
+          MODE: ${{ github.event.action != 'labeled' && 'check' || (github.event.label.name == 'video-approved' && 'approve' || 'remove') }}
+        run: node scripts/videos.mjs
+      - name: Сохранить videos.json
+        if: github.event.action == 'labeled'
+        run: |
+          git config user.name "rustbuilder-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add videos.json
+          git diff --cached --quiet && exit 0
+          git commit -m "videos: #${{ github.event.issue.number }} ${{ github.event.label.name }}"
+          git pull --rebase
+          git push
