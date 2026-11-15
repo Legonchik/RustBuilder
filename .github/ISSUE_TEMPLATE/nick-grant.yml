@@ -1,0 +1,37 @@
+name: 🔒 Выдать ник (только для автора проекта)
+description: Закрепить ник за аккаунтом GitHub, зарезервировать или освободить. Заявки от остальных закрываются автоматически.
+title: "🔒 Ник"
+labels: ["nick-grant"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Обычным игрокам эта форма не нужна: свободный ник закрепляется за тобой сам, когда твою первую базу примут в каталог.
+
+  - type: input
+    id: nick
+    attributes:
+      label: Ник
+      placeholder: GoodJoint
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: Что сделать
+      options:
+        - Выдать (закрепить за аккаунтом GitHub)
+        - Зарезервировать (пока никому не выдавать)
+        - Освободить ник
+    validations:
+      required: true
+
+  - type: input
+    id: github
+    attributes:
+      label: Аккаунт GitHub
+      description: Только для «Выдать». Логин или ссылка на профиль.
+      placeholder: goodjoint
+    validations:
+      required: false
