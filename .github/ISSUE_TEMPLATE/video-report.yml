@@ -1,0 +1,32 @@
+name: ⚑ Жалоба на видео
+description: Видео-гайд в каталоге нарушает правила или не про ту базу.
+title: "⚑ Жалоба на видео"
+labels: ["video-report"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка на видео
+      description: Если открыл форму из программы — уже заполнено.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Что не так
+      options:
+        - Мат, оскорбления, 18+ или шок-контент
+        - Реклама читов, казино, скинов, скам
+        - Видео не про эту базу
+        - Видео удалено или не открывается
+        - Другое
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Подробнее
+    validations:
+      required: false
