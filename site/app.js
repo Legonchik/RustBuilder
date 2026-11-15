@@ -274,8 +274,9 @@ PAGES.login = (v) => {
     h("p", { class: "sub" }, "Аккаунт нужен, чтобы выкладывать базы, ставить лайки и вести свой профиль."),
     h("button", { class: "btn btn--discord btn--big", style: "width:100%", onclick: async () => {
       store("rb_after", store("rb_after") || "#/me");
+      loader("Открываю Discord…");
       const { error } = await sb.auth.signInWithOAuth({ provider: "discord", options: { redirectTo: back } });
-      if (error) toast(errText(error));
+      if (error) { loader(null); toast(errText(error)); }
     } }, "Войти через Discord"),
     h("p", { class: "hint" }, "Если Discord не открывается — войди по почте."),
     h("div", { class: "or" }, "или по почте"), form));
@@ -487,6 +488,21 @@ async function homeExtras() {
   if (data?.length) $("#homeMediaList").replaceChildren(peopleList(data, ""));
 }
 
+// Полноэкранная загрузка: при входе через Discord и при возврате с него.
+function loader(text) {
+  let el = $("#loader");
+  if (!text) { el?.classList.remove("show"); return; }
+  if (!el) {
+    el = h("div", { id: "loader", class: "loader", role: "status", "aria-live": "polite" },
+      h("div", { class: "loader__box" }, h("div", { class: "loader__ring" }), h("p", { class: "loader__text" })));
+    document.body.append(el);
+  }
+  el.querySelector(".loader__text").textContent = text;
+  requestAnimationFrame(() => el.classList.add("show"));
+}
+window.addEventListener("pageshow", (e) => { if (e.persisted) loader(null); }); // вернулись кнопкой «Назад»
+if (/[?&]code=/.test(location.search)) loader("Входим в аккаунт…");
+
 $("#dl").href = C.download; $("#donate").href = C.donate;
 window.addEventListener("hashchange", render);
 if (sb) {
@@ -497,7 +513,7 @@ if (sb) {
       if (ev === "PASSWORD_RECOVERY") { await refreshMe(); renderAccount(); return go("#/reset"); }
       if (was === S.user?.id && S.authChecked) return;
       S.authChecked = true;
-      await refreshMe(); renderAccount();
+      await refreshMe(); renderAccount(); loader(null);
       if (/[?&]code=/.test(location.search)) history.replaceState(null, "", location.pathname + location.hash);
       if (ev === "SIGNED_IN" && !was) {
         if (S.me && !S.me.nick) { toast("Добро пожаловать! Придумай ник"); return go("#/me"); }
