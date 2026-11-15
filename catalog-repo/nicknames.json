@@ -8,6 +8,12 @@
       "source": "grant"
     },
     {
+      "nick": "GoodJoint",
+      "github": null,
+      "added": "2026-11-15",
+      "source": "reserved"
+    },
+    {
       "nick": "RustBuilder",
       "github": "Legonchik",
       "added": "2026-11-15",
