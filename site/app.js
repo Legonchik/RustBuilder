@@ -474,6 +474,8 @@ async function render() {
   document.title = "RustBuilder";
   const home = !route || !PAGES[route];
   $("#home").hidden = !home; $("#view").hidden = home;
+  const shown = home ? $("#home") : $("#view");
+  shown.classList.remove("enter"); void shown.offsetWidth; shown.classList.add("enter"); // перезапуск анимации появления
   if (home) return homeExtras();
   const v = h("div"); $("#view").replaceChildren(v); window.scrollTo(0, 0);
   try { await PAGES[route](v, arg ? decodeURIComponent(arg) : ""); }

@@ -133,6 +133,20 @@ label { display:block; margin:14px 0 6px; color:var(--muted); font-size:13px; }
 .row > .grow { flex:1; min-width:160px; }
 .toast { position:fixed; left:50%; bottom:24px; transform:translate(-50%,20px); opacity:0; padding:12px 18px; border:1px solid var(--line2); border-radius:10px; background:#1b1326; color:var(--ink); font-size:14px; box-shadow:0 10px 40px #000a; transition:.2s; pointer-events:none; z-index:50; max-width:calc(100% - 32px); }
 .toast.show { opacity:1; transform:translate(-50%,0); }
+/* переходы между вкладками */
+.enter { animation:rb-enter .35s cubic-bezier(.2,.7,.2,1) both; }
+.enter .card, .enter .person, .enter .panel { animation:rb-enter .4s cubic-bezier(.2,.7,.2,1) both; }
+.enter .grid > :nth-child(2), .enter .people > :nth-child(2) { animation-delay:.04s; }
+.enter .grid > :nth-child(3), .enter .people > :nth-child(3) { animation-delay:.08s; }
+.enter .grid > :nth-child(4), .enter .people > :nth-child(4) { animation-delay:.12s; }
+.enter .grid > :nth-child(n+5), .enter .people > :nth-child(n+5) { animation-delay:.16s; }
+@keyframes rb-enter { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+.top__nav a { position:relative; transition:color .2s; }
+.top__nav a::after { content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; border-radius:2px; background:var(--violet2); transform:scaleX(0); transition:transform .25s ease; }
+.top__nav a.on::after, .top__nav a:hover::after { transform:scaleX(1); }
+.card, .person, .btn { transition:background .15s, transform .2s, border-color .2s, box-shadow .2s; }
+.card:hover, .person:hover { transform:translateY(-3px); border-color:var(--line2); box-shadow:0 12px 30px #0006; }
+@media (prefers-reduced-motion: reduce) { .enter, .enter .card, .enter .person, .enter .panel { animation:none; } .card:hover, .person:hover { transform:none; } }
 .loader { position:fixed; inset:0; z-index:100; display:grid; place-items:center; background:#100b19e6; backdrop-filter:blur(6px); opacity:0; pointer-events:none; transition:opacity .2s; }
 .loader.show { opacity:1; pointer-events:auto; }
 .loader__box { display:flex; flex-direction:column; align-items:center; gap:18px; }
