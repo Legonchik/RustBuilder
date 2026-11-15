@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RustBuilder</title>
+<meta name="description" content="RustBuilder — пошаговый помощник для строительства баз в Rust: схема поверх игры, каталог баз сообщества, профили авторов.">
+<meta property="og:title" content="RustBuilder — строй базу, не отвлекайся">
+<meta property="og:description" content="Оверлей для Windows: показывает схему базы поверх игры и подсказывает, какой блок ставить дальше.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Legonchik/RustBuilder/main/docs/banner.png">
+<meta name="theme-color" content="#100b19">
+<link rel="icon" href="https://raw.githubusercontent.com/Legonchik/RustBuilder/main/docs/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#/">Rust<span>Builder</span></a>
+    <nav class="top__nav">
+      <a href="#/catalog" data-nav="catalog">Каталог</a>
+      <a href="#/media" data-nav="media">Медиа</a>
+      <a href="#/admin" data-nav="admin" id="navAdmin" hidden>Админка</a>
+    </nav>
+    <div id="account" class="top__acc"></div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Пошаговый помощник для Rust</p>
+        <h1 class="hero__title">Строй базу.<br><em>Не отвлекайся.</em></h1>
+        <p class="lead">RustBuilder — отдельная программа-оверлей: показывает схему базы поверх игры и подсказывает, какой блок ставить дальше.</p>
+        <div class="actions">
+          <a class="btn btn--primary" id="dl" href="#">Скачать для Windows x64</a>
+          <a class="link" href="https://github.com/Legonchik/RustBuilder/releases" target="_blank" rel="noopener">Все версии на GitHub ↗</a>
+        </div>
+        <p class="note">Проект только вышел — выкладывай свои базы, с первых авторов каталог и начнётся.</p>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock__top"><span>RustBuilder · Plan viewer</span><span class="mock__lights"><i></i><i></i><i></i></span></div>
+        <div class="mock__screen">
+          <div class="mock__side">
+            <p>БИБЛИОТЕКА</p>
+            <div class="on">1×1 starter</div><div>Bunker duo</div><div>Clan 4×4</div><div>Ещё базы…</div>
+          </div>
+          <div class="mock__work">
+            <span class="mock__floor">ЭТАЖ 01 · ШАГ 08/42</span>
+            <div class="mock__map"><i></i><i></i><i class="e"></i><i></i><i class="c"></i><i></i><i class="e"></i><i></i><i></i></div>
+            <div class="mock__next"><div><small>СЛЕДУЮЩИЙ БЛОК</small><strong>СТЕНА · СВЕРХУ</strong></div><b>↑</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2>Всё нужное —<br>в одном окне</h2>
+        <p>Выбери план, открой нужный этаж и двигайся по шагам. Управление остаётся у тебя — программа только помогает ориентироваться.</p>
+      </div>
+      <div class="features">
+        <div class="feat"><span>⌂</span><h3 id="basesCount">Готовые базы</h3><p>От компактного соло 1×1 до клановой 4×4, с шлюзами и буферами.</p></div>
+        <div class="feat"><span>▦</span><h3>Схема по этажам</h3><p>План показывает текущий блок и направление установки прямо наглядно.</p></div>
+        <div class="feat"><span>♫</span><h3>Голосовые подсказки</h3><p>Услышь, что ставить дальше, и меньше отвлекайся на чтение.</p></div>
+        <div class="feat"><span>⌘</span><h3>Управление в игре</h3><p>Переключай шаги горячими клавишами, например Ctrl + Alt + →.</p></div>
+        <div class="feat"><span>＋</span><h3>Свои планы</h3><p>Рисуй базы в редакторе и выкладывай их в каталог прямо с сайта.</p></div>
+        <div class="feat"><span>↗</span><h3>Каталог сообщества</h3><p>Лайки, избранное и профили авторов — <a href="#/catalog">открыть каталог</a>.</p></div>
+        <div class="feat"><span>★</span><h3>Медиа</h3><p>Ютуберы и стримеры по Rust со значком «Медиа» — <a href="#/media">смотреть</a>.</p></div>
+        <div class="feat"><span>✓</span><h3>Ты управляешь игрой</h3><p>RustBuilder показывает план и подсказывает, но ничего не строит за тебя.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="homeMedia" hidden>
+    <div class="wrap">
+      <div class="sec__head"><h2>Медиа</h2><a class="link" href="#/media">Все →</a></div>
+      <div class="people" id="homeMediaList"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap safety">
+      <h2>Оверлей.<br>Не вмешательство.</h2>
+      <div>
+        <p>Программа задумана как отдельное окно поверх игры. Она не внедряется в Rust, не читает память процесса и не нажимает игровые кнопки за тебя.</p>
+        <ul>
+          <li>Не внедряется в игру</li><li>Не читает память</li>
+          <li>Не автоматизирует нажатия</li><li>Подсказки и управление — у игрока</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="view" class="wrap view" hidden></main>
+
+<footer class="wrap foot">
+  <span>RustBuilder · фанатский проект, не связанный с Facepunch Studios. Rust — торговая марка Facepunch Studios.</span>
+  <span><a id="donate" href="#" target="_blank" rel="noopener">❤ Поддержать</a> · <a href="https://github.com/Legonchik/RustBuilder" target="_blank" rel="noopener">GitHub ↗</a></span>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

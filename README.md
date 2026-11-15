@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="https://rustbuilder.tilda.ws"><b>Сайт</b></a> &nbsp;·&nbsp;
+  🌐 <a href="https://legonchik.github.io/RustBuilder/"><b>Сайт</b></a> &nbsp;·&nbsp;
   📚 <a href="catalog-repo"><b>Каталог баз</b></a> &nbsp;·&nbsp;
   💬 <a href="../../issues"><b>Вопросы и идеи</b></a> &nbsp;·&nbsp;
   ❤ <a href="https://pay.cloudtips.ru/p/94c686ed"><b>Поддержать автора</b></a>
