@@ -1,7 +1,8 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace RustBuilder;
 
@@ -25,15 +26,29 @@ public partial class SettingsWindow : Window
     public SettingsWindow(MainWindow overlay)
     {
         InitializeComponent();
+        Anim.Window(this);
         this.overlay = overlay;
         rows = Enum.GetValues(typeof(HotkeyAction)).Cast<HotkeyAction>()
                    .Select(a => new Row { Action = a, Display = Hotkey.Display(s.GetHotkey(a)) }).ToList();
         HotkeyList.ItemsSource = rows;
 
         PieceByPiece.IsChecked = s.PieceByPiece;
+        SimpleMode.IsChecked = s.SimpleMode;
+        VoiceEnabled.IsChecked = s.VoiceEnabled;
+        VolumeSlider.Value = s.VoiceVolume;
+        if (!Voice.Available) { VoiceMissing.Visibility = Visibility.Visible; VoiceEnabled.IsEnabled = false; VoicePanel.IsEnabled = false; }
         ScaleSlider.Value = s.Scale;
         OpacitySlider.Value = s.BackgroundOpacity;
         RepoBox.Text = s.CatalogRepo ?? "";
+        Animations.IsChecked = s.Animations;
+        Splash.IsChecked = s.Splash;
+        InteriorsEnabled.IsChecked = s.InteriorsEnabled;
+        AutoUpdate.IsChecked = s.AutoUpdate;
+        DiscordBox.IsChecked = s.DiscordPresence;
+        SoundsBox.IsChecked = s.SoundsEnabled;
+        VersionText.Text = $"Версия {Updater.Current}";
+        BuildSwatches();
+        BuildLegend();
         UpdateLabels();
         loading = false;
 
@@ -43,6 +58,7 @@ public partial class SettingsWindow : Window
     void UpdateLabels()
     {
         ScaleValue.Text = $"{ScaleSlider.Value * 100:0}%";
+        VolumeValue.Text = $"{VolumeSlider.Value:0}";
         OpacityValue.Text = $"{OpacitySlider.Value * 100:0}%";
         RotationText.Text = $"Поворот схемы: {s.Rotation % 4 * 90}°";
     }
@@ -108,6 +124,18 @@ public partial class SettingsWindow : Window
     {
         if (loading) return;
         s.PieceByPiece = PieceByPiece.IsChecked == true;
+        s.SimpleMode = SimpleMode.IsChecked == true;
+        s.VoiceEnabled = VoiceEnabled.IsChecked == true;
+        s.Animations = Animations.IsChecked == true;
+        s.Splash = Splash.IsChecked == true;
+        bool interiorsChanged = s.InteriorsEnabled != (InteriorsEnabled.IsChecked == true);
+        s.InteriorsEnabled = InteriorsEnabled.IsChecked == true;
+        if (interiorsChanged) overlay.ReapplyInterior();
+        s.AutoUpdate = AutoUpdate.IsChecked == true;
+        s.DiscordPresence = DiscordBox.IsChecked == true;
+        s.SoundsEnabled = SoundsBox.IsChecked == true;
+        if (!s.DiscordPresence) DiscordPresence.Clear();
+        if (!s.VoiceEnabled) Voice.Stop();
         s.Save();
         overlay.SettingsChanged();
     }
@@ -117,10 +145,73 @@ public partial class SettingsWindow : Window
         if (loading) return;
         s.Scale = ScaleSlider.Value;
         s.BackgroundOpacity = OpacitySlider.Value;
+        s.VoiceVolume = (int)VolumeSlider.Value;
         s.Save();
         UpdateLabels();
         overlay.SettingsChanged();
     }
+
+    // ---------- Цвет, легенда, обновления ----------
+
+    void BuildSwatches()
+    {
+        ColorSwatches.Children.Clear();
+        foreach (var (name, hex) in Theme.Presets)
+        {
+            var col = Theme.Parse(hex);
+            bool sel = string.Equals(s.AccentColor, hex, StringComparison.OrdinalIgnoreCase);
+            var row = new StackPanel { Orientation = Orientation.Horizontal };
+            row.Children.Add(new System.Windows.Shapes.Ellipse
+            {
+                Width = 14, Height = 14, Fill = new SolidColorBrush(col), Margin = new Thickness(0, 0, 6, 0),
+                Stroke = sel ? Brushes.White : null, StrokeThickness = 2,
+            });
+            row.Children.Add(new TextBlock { Text = name, VerticalAlignment = VerticalAlignment.Center });
+            var b = new Button { Content = row, Margin = new Thickness(0, 0, 6, 6), Padding = new Thickness(8, 4, 10, 4) };
+            if (sel) b.Background = new SolidColorBrush(Color.FromArgb(0x66, col.R, col.G, col.B));
+            b.Click += (_, _) =>
+            {
+                s.AccentColor = hex;
+                s.Save();
+                Theme.Apply(hex);
+                BuildSwatches();
+                BuildLegend();
+                overlay.SettingsChanged();
+            };
+            ColorSwatches.Children.Add(b);
+        }
+    }
+
+    void BuildLegend()
+    {
+        LegendList.Children.Clear();
+        foreach (var (kind, title, text) in PlanRenderer.Legend)
+        {
+            var sample = new Canvas { Width = 76, Height = 46, ClipToBounds = true };
+            PlanRenderer.DrawLegend(sample, kind);
+            var row = new DockPanel { Margin = new Thickness(0, 0, 0, 6) };
+            var box = new Border
+            {
+                Child = sample, Background = new SolidColorBrush(Color.FromArgb(0x33, 0, 0, 0)), CornerRadius = new CornerRadius(4),
+                Margin = new Thickness(0, 0, 10, 0), VerticalAlignment = VerticalAlignment.Top,
+            };
+            DockPanel.SetDock(box, Dock.Left);
+            row.Children.Add(box);
+            var txt = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
+            txt.Children.Add(new TextBlock { Text = title, FontSize = 13, FontWeight = FontWeights.SemiBold });
+            txt.Children.Add(new TextBlock { Text = text, FontSize = 12, Opacity = 0.7, TextWrapping = TextWrapping.Wrap });
+            row.Children.Add(txt);
+            LegendList.Children.Add(row);
+        }
+    }
+
+    void ShowSplash_Click(object sender, RoutedEventArgs e) => new SplashWindow().Show();
+
+    void Support_Click(object sender, RoutedEventArgs e) => Support.Open();
+
+    async void CheckUpdate_Click(object sender, RoutedEventArgs e) => await UpdateWindow.CheckAndOffer(manual: true, owner: this);
+
+    void TestVoice_Click(object sender, RoutedEventArgs e) => Voice.Say("Стена. Сверху. Металлическая дверь и кодовый замок.", s.VoiceVolume);
 
     void Rotate_Click(object sender, RoutedEventArgs e)
     {

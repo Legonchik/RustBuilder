@@ -17,11 +17,23 @@ public class CatalogEntry
     public int Foundations { get; set; }
     public int Floors { get; set; }
     public int Steps { get; set; }
+    /// Номер issue со страницей лайков (заполняет GitHub Actions); null — лайков ещё нет
+    public int? Issue { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore] public int Likes { get; set; }
+    /// Лайки GitHub (👍 в issue) — старые, прибавляются к лайкам сайта
+    [System.Text.Json.Serialization.JsonIgnore] public int GhLikes { get; set; }
+    /// База, выложенная через сайт (id в Supabase); null — база из каталога GitHub
+    [System.Text.Json.Serialization.JsonIgnore] public string SiteId { get; set; }
+    /// Ключ лайка на сайте: как в site/app.js
+    [System.Text.Json.Serialization.JsonIgnore] public string LikeKey => SiteId != null ? "s:" + SiteId : "gh:" + File;
+
+    public string Badge => Authors.BadgeText(Author);
+    public System.Windows.Media.Brush BadgeBrush => Authors.BadgeBrush(Author);
+    public System.Windows.Visibility BadgeVisible => Badge == null ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
 
     public string Subtitle =>
         string.Join(" · ", new[]
         {
-            string.IsNullOrEmpty(Author) ? null : Author,
             $"{Foundations} фунд.", $"{Floors} эт.",
             string.IsNullOrEmpty(Added) ? null : Added,
         }.Where(s => s != null));
@@ -38,11 +50,19 @@ public class CatalogIndex
 public static class Catalog
 {
     /// Официальный каталог. Заполнить после создания репозитория на GitHub: "владелец/репозиторий"
-    public const string DefaultRepo = "Legonchik/rustbuilder-bases";
+    /// Можно с подпапкой: "владелец/репозиторий/папка" — каталог лежит в папке основного репозитория
+    public const string DefaultRepo = "Legonchik/RustBuilder/catalog-repo";
 
     static readonly HttpClient Http = CreateHttp();
     static readonly JsonSerializerOptions Opts = new() { PropertyNameCaseInsensitive = true };
-    static readonly Regex RepoRx = new(@"^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$");
+    static readonly Regex RepoRx = new(@"^[A-Za-z0-9-]+/[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$");
+
+    /// "владелец/репозиторий/папка" → ("владелец/репозиторий", "папка/")
+    public static (string Repo, string Prefix) Split(string repo)
+    {
+        var parts = repo.Split('/');
+        return (parts[0] + "/" + parts[1], parts.Length > 2 ? string.Join("/", parts.Skip(2)) + "/" : "");
+    }
 
     static HttpClient CreateHttp()
     {
@@ -60,7 +80,8 @@ public static class Catalog
         if (IsLocal(repo)) return await File.ReadAllTextAsync(Path.Combine(repo, path.Replace('/', Path.DirectorySeparatorChar)));
         if (!IsGitHubRepo(repo)) throw new Exception("каталог не настроен");
         // параметр t обходит кэш, чтобы новые базы появлялись сразу
-        var url = $"https://raw.githubusercontent.com/{repo}/{branch}/{string.Join("/", path.Split('/').Select(Uri.EscapeDataString))}?t={DateTime.UtcNow.Ticks}";
+        var (ownerRepo, prefix) = Split(repo);
+        var url = $"https://raw.githubusercontent.com/{ownerRepo}/{branch}/{string.Join("/", (prefix + path).Split('/').Select(Uri.EscapeDataString))}?t={DateTime.UtcNow.Ticks}";
         using var resp = await Http.GetAsync(url);
         if (resp.StatusCode == System.Net.HttpStatusCode.NotFound)
             throw new Exception($"не найдено: {repo}/{path} (репозиторий публичный? ветка '{branch}'?)");
@@ -74,8 +95,81 @@ public static class Catalog
         return JsonSerializer.Deserialize<CatalogIndex>(json, Opts) ?? new CatalogIndex();
     }
 
+    // ---------- Лайки: 👍 и ❤ на issue базы (метка «base») ----------
+
+    static string LikesCachePath => Path.Combine(AppSettings.AppDir, "likes-cache.json");
+    record LikesCache(string Repo, DateTime At, Dictionary<int, int> Likes);
+
+    /// Номер issue → число лайков. Без авторизации GitHub даёт 60 запросов в час, поэтому кэшируем на 3 минуты.
+    /// fresh — игнорировать кэш (после нажатия «♥»). При ошибке сети отдаём старый кэш или пустой словарь.
+    public static async Task<Dictionary<int, int>> LoadLikes(string repo, bool fresh = false)
+    {
+        LikesCache cached = null;
+        try { if (File.Exists(LikesCachePath)) cached = JsonSerializer.Deserialize<LikesCache>(await File.ReadAllTextAsync(LikesCachePath)); } catch { }
+        if (cached?.Repo != repo) cached = null;
+        if (!IsGitHubRepo(repo)) return new();
+        if (cached != null && !fresh && DateTime.UtcNow - cached.At < TimeSpan.FromMinutes(3)) return cached.Likes;
+        try
+        {
+            var likes = new Dictionary<int, int>();
+            for (int page = 1; page <= 10; page++)
+            {
+                var json = await Http.GetStringAsync($"https://api.github.com/repos/{Split(repo).Repo}/issues?labels=base&state=all&per_page=100&page={page}");
+                using var doc = JsonDocument.Parse(json);
+                int n = 0;
+                foreach (var i in doc.RootElement.EnumerateArray())
+                {
+                    n++;
+                    var r = i.GetProperty("reactions");
+                    likes[i.GetProperty("number").GetInt32()] = r.GetProperty("+1").GetInt32() + r.GetProperty("heart").GetInt32();
+                }
+                if (n < 100) break;
+            }
+            Directory.CreateDirectory(AppSettings.AppDir);
+            await File.WriteAllTextAsync(LikesCachePath, JsonSerializer.Serialize(new LikesCache(repo, DateTime.UtcNow, likes)));
+            return likes;
+        }
+        catch { return cached?.Likes ?? new(); }
+    }
+
+    public static string LikeUrl(string repo, int issue) => $"https://github.com/{Split(repo).Repo}/issues/{issue}";
+
+    // ---------- Реестр ников (nicknames.json) ----------
+
+    class NickIndex { public List<NickEntry> Nicks { get; set; } = new(); }
+
+    /// Список закреплённых и зарезервированных ников. При ошибке сети — пусто (проверит сервер).
+    public static async Task<List<NickEntry>> LoadNicknames(string repo, string branch)
+    {
+        try { return JsonSerializer.Deserialize<NickIndex>(await GetText(repo, branch, "nicknames.json"), Opts)?.Nicks ?? new(); }
+        catch { return new(); }
+    }
+
+    // ---------- Видео-гайды (videos.json, только одобренные модератором) ----------
+
+    /// Файл базы → одобренные видео. При ошибке — пусто (видео не обязательны).
+    public static async Task<Dictionary<string, List<VideoGuide>>> LoadVideos(string repo, string branch)
+    {
+        try
+        {
+            var json = await GetText(repo, branch, "videos.json");
+            var data = JsonSerializer.Deserialize<VideoIndex>(json, Opts);
+            return (data?.Videos ?? new()).Where(v => v.IsSafe)
+                .GroupBy(v => v.Base).ToDictionary(g => g.Key, g => g.ToList());
+        }
+        catch { return new(); }
+    }
+
+    public static string SuggestVideoUrl(string repo, string baseFile) =>
+        $"https://github.com/{Split(repo).Repo}/issues/new?template=video-guide.yml&base={Uri.EscapeDataString(baseFile)}";
+
+    public static string ReportVideoUrl(string repo, VideoGuide v) =>
+        $"https://github.com/{Split(repo).Repo}/issues/new?template=video-report.yml&url={Uri.EscapeDataString(v.SafeUrl ?? "")}" +
+        $"&details={Uri.EscapeDataString($"Заявка #{v.Issue}, база {v.Base}")}";
+
     public static Task<string> LoadBase(string repo, string branch, CatalogEntry e)
     {
+        if (e.SiteId != null) return Site.LoadBaseJson(e.SiteId);
         if (e.File == null || !e.File.StartsWith("bases/") || e.File.Contains("..")) throw new Exception("некорректный путь к файлу в index.json");
         return GetText(repo, branch, e.File);
     }
@@ -104,7 +198,8 @@ public static class Catalog
     /// Если содержимое слишком длинное для ссылки, вернётся ссылка без него (текст тогда вставляют из буфера обмена).
     public static (string url, bool contentInUrl) UploadUrl(string repo, string branch, string fileName, string json)
     {
-        var baseUrl = $"https://github.com/{repo}/new/{branch}/bases?filename={Uri.EscapeDataString(fileName)}";
+        var (ownerRepo, prefix) = Split(repo);
+        var baseUrl = $"https://github.com/{ownerRepo}/new/{branch}/{prefix}bases?filename={Uri.EscapeDataString(fileName)}";
         var withValue = baseUrl + "&value=" + Uri.EscapeDataString(json);
         return withValue.Length <= 7500 ? (withValue, true) : (baseUrl, false);
     }
